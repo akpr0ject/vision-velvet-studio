@@ -75,26 +75,66 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-wine-ink/70 via-wine-ink/30 to-wine-ink" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_55%,transparent,oklch(0.16_0.04_25/0.75))]" />
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <div className="animate-fade-up flex flex-col items-center">
-          <span className="text-eyebrow">Luxury Wedding Films · Gujarat</span>
-          <span className="gold-divider mt-5" />
+      {/* Editorial corner marks */}
+      <div className="absolute left-6 top-24 z-10 hidden text-[10px] uppercase tracking-[0.4em] text-ivory/55 md:block lg:left-10">
+        <div className="flex items-center gap-3">
+          <span className="h-px w-8 bg-gold/60" />
+          Est. 2017
+        </div>
+        <div className="mt-2 pl-11">Rajkot · Jamnagar</div>
+      </div>
+      <div className="absolute right-6 top-24 z-10 hidden text-right text-[10px] uppercase tracking-[0.4em] text-ivory/55 md:block lg:right-10">
+        <div className="flex items-center justify-end gap-3">
+          Vol. 08
+          <span className="h-px w-8 bg-gold/60" />
+        </div>
+        <div className="mt-2 pr-11">A Film Studio</div>
+      </div>
 
-          <h1 className="font-display mt-8 text-[14vw] leading-[0.95] tracking-tight text-ivory sm:text-7xl lg:text-8xl xl:text-[7.5rem]">
-            Love, written
-            <br />
-            <em className="italic gold-text">in light.</em>
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        <div className="animate-fade-up relative flex flex-col items-center">
+          {/* Oversized outlined backdrop word */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 select-none whitespace-nowrap font-display text-[28vw] font-extrabold leading-none tracking-tighter sm:-top-16 sm:text-[22vw] lg:-top-24 lg:text-[18rem]"
+            style={{
+              WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.18)",
+              color: "transparent",
+            }}
+          >
+            forever
+          </span>
+
+          <span className="text-eyebrow relative">A HK Wedding Film</span>
+
+          {/* Editorial mixed-weight headline */}
+          <h1 className="relative mt-7 flex flex-col items-center gap-1 leading-[0.92] text-ivory">
+            <span className="font-display text-[10vw] font-light italic tracking-tight text-ivory/85 sm:text-5xl lg:text-6xl">
+              we film
+            </span>
+            <span className="font-display text-[18vw] font-extrabold uppercase tracking-[-0.04em] sm:text-8xl lg:text-[8.5rem]">
+              love<span className="gold-text">.</span>
+            </span>
+            <span className="font-display text-[8vw] font-medium tracking-tight text-ivory/85 sm:text-4xl lg:text-5xl">
+              not <em className="italic font-light gold-text">weddings.</em>
+            </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-sm font-light leading-relaxed text-ivory/75 sm:text-base">
-            A cinematic studio crafting timeless wedding films and photography
-            for couples who want their love story told beautifully — frame by frame.
+          <div className="relative mt-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-ivory/60">
+            <span className="h-px w-10 bg-gold/60" />
+            Cinematic · Editorial · Timeless
+            <span className="h-px w-10 bg-gold/60" />
+          </div>
+
+          <p className="relative mt-7 max-w-md text-sm font-light leading-relaxed text-ivory/70">
+            For couples who want their day remembered the way it actually felt —
+            quiet, golden, and entirely their own.
           </p>
 
-          <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
+          <div className="relative mt-10 flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
             <a
               href="#showcase"
-              className="group inline-flex items-center gap-3 bg-gold px-8 py-4 text-[11px] font-medium uppercase tracking-[0.3em] text-wine-ink transition-all hover:bg-gold-soft"
+              className="group inline-flex items-center gap-3 bg-gold px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-wine-ink transition-all hover:bg-gold-soft"
             >
               View Our Films
               <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -113,6 +153,7 @@ function Hero() {
         <div className="mx-auto h-10 w-px bg-gradient-to-b from-transparent to-gold/60" />
         <span className="mt-2 block text-[10px] tracking-[0.4em] text-ivory/50 uppercase">Scroll</span>
       </div>
+
     </section>
   );
 }
