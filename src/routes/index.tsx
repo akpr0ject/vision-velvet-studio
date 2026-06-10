@@ -775,7 +775,7 @@ function Contact() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">Chapter 06 — Begin</span>
+              <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
               Tell us your <br />
