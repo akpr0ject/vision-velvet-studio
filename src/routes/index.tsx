@@ -197,7 +197,7 @@ function Story() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         {/* Top editorial bar */}
         <div className="flex items-end justify-between border-b border-gold/20 pb-6">
-          <span className="text-eyebrow text-gold">— The Studio · Est. 2017</span>
+          <span className="text-eyebrow text-gold">{"\n"}</span>
           <span className="hidden text-[10px] uppercase tracking-[0.4em] text-ivory/40 md:block">Ahmedabad · Gujarat</span>
         </div>
 
