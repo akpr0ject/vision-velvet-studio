@@ -606,65 +606,107 @@ function Packages() {
   ];
 
   return (
-    <section id="packages" className="relative border-t border-border py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-eyebrow">Wedding Investment</span>
-          <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-            Three ways to <em className="italic gold-text">remember.</em>
-          </h2>
-          <p className="mt-6 text-sm font-light text-ivory/70">
-            Every package is a starting point. We're happy to tailor coverage to your dates, venues and rituals.
+    <section id="packages" className="relative overflow-hidden border-t border-gold/15 py-28 lg:py-40">
+      {/* Backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -right-10 bottom-10 select-none whitespace-nowrap text-[14vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.08)", color: "transparent" }}
+      >
+        Investment
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 04 — Wedding Investment</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
+              Three ways to <em className="italic gold-text font-light">remember.</em>
+            </h2>
+          </div>
+          <p className="text-sm font-light text-ivory/70 lg:col-span-5">
+            Every package is a starting point. We're happy to tailor coverage to your dates, venues and rituals — write to us and we'll send the full brochure within 24 hours.
           </p>
         </div>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-3">
-          {tiers.map((t) => (
+        <div className="mt-20 grid gap-px overflow-hidden border border-gold/20 bg-gold/15 lg:grid-cols-3">
+          {tiers.map((t, idx) => (
             <article
               key={t.name}
-              className={`relative flex flex-col border p-10 transition-all hover-lift lg:p-12 ${
+              className={`group relative flex flex-col p-10 transition-all lg:p-12 ${
                 t.featured
-                  ? "border-gold bg-gradient-to-b from-emerald-deep/80 to-emerald-ink"
-                  : "border-border bg-emerald-deep/30"
+                  ? "bg-gradient-to-b from-wine-deep to-wine-ink lg:scale-y-[1.04] lg:-my-1 lg:z-10 lg:shadow-2xl lg:shadow-wine-ink"
+                  : "bg-wine-ink/85 hover:bg-wine-deep/60"
               }`}
             >
               {t.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold px-4 py-1 text-[10px] uppercase tracking-[0.3em] text-emerald-ink">
+                <div className="absolute right-6 top-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
                   Most Booked
                 </div>
               )}
-              <div className="text-eyebrow">{t.name} Package</div>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-sm text-gold">₹</span>
-                <span className="font-display text-5xl text-ivory lg:text-6xl">{t.price}</span>
+
+              {/* Header */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-display text-[10px] uppercase tracking-[0.4em] text-gold/80">
+                    Package · 0{idx + 1}
+                  </div>
+                  <div className="font-display mt-2 text-3xl text-ivory lg:text-4xl">
+                    {t.name}
+                  </div>
+                </div>
+                <div className="text-right font-display text-5xl text-gold/20 transition-colors group-hover:text-gold/40 lg:text-6xl">
+                  0{idx + 1}
+                </div>
               </div>
-              <p className="mt-3 font-display italic text-ivory/70">{t.tagline}</p>
-              <span className="gold-divider mt-8" />
+
+              {/* Price block */}
+              <div className="mt-10 border-y border-gold/20 py-6">
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-sm text-gold">₹</span>
+                  <span className="font-display text-5xl font-extrabold text-ivory lg:text-[3.5rem]">
+                    {t.price}
+                  </span>
+                </div>
+                <p className="font-display mt-3 italic text-ivory/65">{t.tagline}</p>
+              </div>
+
               <ul className="mt-8 flex-1 space-y-4">
                 {t.features.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm font-light text-ivory/85">
-                    <span className="mt-1.5 inline-block h-1 w-3 shrink-0 bg-gold" />
+                  <li key={f} className="flex items-start gap-3 text-sm font-light text-ivory/85">
+                    <span className="mt-2 inline-block h-px w-4 shrink-0 bg-gold" />
                     {f}
                   </li>
                 ))}
               </ul>
+
               <a
                 href="#contact"
-                className={`mt-10 inline-flex w-full items-center justify-center px-6 py-4 text-xs font-medium uppercase tracking-[0.3em] transition-all ${
+                className={`group/btn mt-10 inline-flex w-full items-center justify-between px-6 py-4 text-xs font-medium uppercase tracking-[0.3em] transition-all ${
                   t.featured
-                    ? "bg-gold text-emerald-ink hover:bg-gold-soft"
-                    : "border border-gold/60 text-gold hover:bg-gold hover:text-emerald-ink"
+                    ? "bg-gold text-wine-ink hover:bg-gold-soft"
+                    : "border border-gold/50 text-gold hover:bg-gold hover:text-wine-ink"
                 }`}
               >
                 Reserve {t.name}
+                <span className="transition-transform group-hover/btn:translate-x-1">→</span>
               </a>
             </article>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-[10px] uppercase tracking-[0.3em] text-ivory/40">
+          Travel, taxes & destination logistics quoted separately · Limited dates per season
+        </p>
       </div>
     </section>
   );
 }
+
 
 function Testimonials() {
   const quotes = [
