@@ -63,7 +63,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative h-[100svh] w-full overflow-hidden">
+    <section id="top" className="relative h-[100svh] min-h-[680px] w-full overflow-hidden">
       <img
         src={hero}
         alt="Cinematic Indian bride at golden hour"
@@ -71,39 +71,52 @@ function Hero() {
         width={1920}
         height={1280}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-ink/70 via-emerald-ink/40 to-emerald-ink" />
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-ink/60 to-transparent" />
+      {/* Layered scrims for legible centered text */}
+      <div className="absolute inset-0 bg-gradient-to-b from-wine-ink/70 via-wine-ink/30 to-wine-ink" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_55%,transparent,oklch(0.16_0.04_25/0.75))]" />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 lg:px-10 lg:pb-32">
-        <div className="max-w-3xl animate-fade-up">
-          <span className="text-eyebrow">Est. Gujarat · India</span>
-          <h1 className="font-display mt-6 text-5xl leading-[0.95] tracking-tight text-ivory sm:text-7xl lg:text-[7.5rem]">
-            Love, written <br />
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        <div className="animate-fade-up flex flex-col items-center">
+          <span className="text-eyebrow">Luxury Wedding Films · Gujarat</span>
+          <span className="gold-divider mt-5" />
+
+          <h1 className="font-display mt-8 text-[14vw] leading-[0.95] tracking-tight text-ivory sm:text-7xl lg:text-8xl xl:text-[7.5rem]">
+            Love, written
+            <br />
             <em className="italic gold-text">in light.</em>
           </h1>
-          <p className="mt-8 max-w-xl text-base font-light leading-relaxed text-ivory/75 sm:text-lg">
-            HK Wedding Films is a cinematic studio crafting timeless wedding films
-            and photography for couples who want their love story told beautifully — frame by frame.
+
+          <p className="mt-8 max-w-xl text-sm font-light leading-relaxed text-ivory/75 sm:text-base">
+            A cinematic studio crafting timeless wedding films and photography
+            for couples who want their love story told beautifully — frame by frame.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-5">
-            <a href="#showcase" className="group inline-flex items-center gap-3 bg-gold px-8 py-4 text-xs font-medium uppercase tracking-[0.3em] text-emerald-ink transition-all hover:bg-gold-soft">
+
+          <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
+            <a
+              href="#showcase"
+              className="group inline-flex items-center gap-3 bg-gold px-8 py-4 text-[11px] font-medium uppercase tracking-[0.3em] text-wine-ink transition-all hover:bg-gold-soft"
+            >
               View Our Films
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
-            <a href="#contact" className="text-xs font-medium uppercase tracking-[0.3em] text-ivory/80 underline decoration-gold/50 underline-offset-8 transition-colors hover:text-gold">
+            <a
+              href="#contact"
+              className="text-[11px] font-medium uppercase tracking-[0.3em] text-ivory/80 underline decoration-gold/50 underline-offset-8 transition-colors hover:text-gold"
+            >
               Book a Consultation
             </a>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-center">
-        <div className="mx-auto h-12 w-px bg-gradient-to-b from-transparent to-gold/60" />
+      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center">
+        <div className="mx-auto h-10 w-px bg-gradient-to-b from-transparent to-gold/60" />
         <span className="mt-2 block text-[10px] tracking-[0.4em] text-ivory/50 uppercase">Scroll</span>
       </div>
     </section>
   );
 }
+
 
 function Marquee() {
   const words = ["Cinematic", "Timeless", "Editorial", "Soulful", "Crafted", "Heirloom"];
