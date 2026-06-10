@@ -415,7 +415,7 @@ function Showcase() {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-gold/60" />
-                <span className="text-eyebrow text-gold">Live from the Studio</span>
+                <span className="text-eyebrow text-gold">{"\n"}</span>
               </div>
               <h3 className="font-display mt-5 text-3xl text-ivory sm:text-5xl">
                 <span className="italic font-light">@</span>hk.weddingfilms
