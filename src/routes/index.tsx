@@ -160,21 +160,27 @@ function Hero() {
 
 
 function Marquee() {
-  const words = ["Cinematic", "Timeless", "Editorial", "Soulful", "Crafted", "Heirloom"];
+  const words = ["Cinematic", "Timeless", "Editorial", "Soulful", "Crafted", "Heirloom", "Unhurried", "Golden"];
+  const row = [...words, ...words];
   return (
-    <div className="border-y border-border bg-emerald-deep/30 py-6 overflow-hidden">
-      <div className="flex animate-[shimmer_30s_linear_infinite] gap-16 whitespace-nowrap font-display text-2xl italic text-gold/80 sm:text-3xl"
-        style={{ animation: "none" }}>
-        {[...words, ...words, ...words].map((w, i) => (
-          <span key={i} className="flex items-center gap-16">
-            {w}
-            <span className="text-gold/40">✦</span>
+    <div className="relative overflow-hidden border-y border-gold/20 bg-wine-deep/40 py-8">
+      <div className="flex w-max animate-marquee gap-14 whitespace-nowrap pr-14 font-display text-3xl italic text-gold/85 sm:text-4xl lg:text-5xl">
+        {row.map((w, i) => (
+          <span key={i} className="flex items-center gap-14">
+            <span className="font-extralight">{w}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" className="text-gold/60" aria-hidden>
+              <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" fill="currentColor" />
+            </svg>
           </span>
         ))}
       </div>
+      {/* edge fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent" />
     </div>
   );
 }
+
 
 function Story() {
   return (
@@ -326,28 +332,62 @@ function Story() {
 
 function Services() {
   const items = [
-    { t: "Cinematic Films", d: "Long-form wedding films composed like cinema — rhythm, music, restraint." },
-    { t: "Editorial Photography", d: "Quiet, candid frames that capture emotion before it ends." },
-    { t: "Pre-Wedding Stories", d: "Concept-driven shoots that introduce you as a couple, not just a portrait." },
-    { t: "Aerial & Drone", d: "Sweeping perspectives of your venue, mandap, and the day itself." },
-    { t: "Highlight Teasers", d: "Two to three minute reels — share-ready, beautifully cut." },
-    { t: "Heirloom Albums", d: "Hand-finished printed albums made to outlast every device." },
+    { t: "Cinematic Films", d: "Long-form wedding films composed like cinema — rhythm, music, restraint.", icon: "🎞" },
+    { t: "Editorial Photography", d: "Quiet, candid frames that capture emotion before it ends.", icon: "📷" },
+    { t: "Pre-Wedding Stories", d: "Concept-driven shoots that introduce you as a couple, not just a portrait.", icon: "✶" },
+    { t: "Aerial & Drone", d: "Sweeping perspectives of your venue, mandap, and the day itself.", icon: "◐" },
+    { t: "Highlight Teasers", d: "Two to three minute reels — share-ready, beautifully cut.", icon: "▶" },
+    { t: "Heirloom Albums", d: "Hand-finished printed albums made to outlast every device.", icon: "❖" },
   ];
   return (
-    <section className="relative border-y border-border bg-emerald-deep/40 py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-eyebrow">What We Do</span>
-          <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-            Every craft, <em className="italic gold-text">under one roof.</em>
-          </h2>
+    <section className="relative overflow-hidden border-y border-gold/15 bg-wine-deep/40 py-28 lg:py-40">
+      {/* Backdrop chapter mark */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -right-10 top-10 select-none text-[14rem] font-extrabold leading-none tracking-tighter text-gold/[0.05] lg:text-[20rem]"
+      >
+        02
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 02 — What We Do</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
+              Every craft, <br />
+              <em className="italic gold-text font-light">under one roof.</em>
+            </h2>
+          </div>
+          <div className="lg:col-span-5 lg:col-start-8">
+            <p className="text-base font-light leading-relaxed text-ivory/70">
+              A small, devoted team of cinematographers, photographers and editors —
+              moving as one unit, so every ritual is held with the same quiet attention.
+            </p>
+          </div>
         </div>
-        <div className="mt-20 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* Editorial split list */}
+        <div className="mt-20 divide-y divide-gold/15 border-y border-gold/15">
           {items.map((it, i) => (
-            <div key={it.t} className="group bg-emerald-ink p-10 transition-colors hover:bg-emerald-deep/60 lg:p-12">
-              <div className="font-display text-xs italic text-gold">0{i + 1}</div>
-              <h3 className="font-display mt-6 text-2xl text-ivory lg:text-3xl">{it.t}</h3>
-              <p className="mt-4 text-sm font-light leading-relaxed text-ivory/70">{it.d}</p>
+            <div
+              key={it.t}
+              className="group grid cursor-default grid-cols-12 items-center gap-6 py-8 transition-colors hover:bg-wine-ink/40 lg:py-10"
+            >
+              <div className="col-span-2 font-display text-sm italic text-gold/70 lg:col-span-1 lg:text-base">
+                / 0{i + 1}
+              </div>
+              <h3 className="font-display col-span-10 text-2xl text-ivory transition-transform duration-500 group-hover:translate-x-2 lg:col-span-5 lg:text-4xl">
+                {it.t}
+              </h3>
+              <p className="col-span-12 text-sm font-light leading-relaxed text-ivory/65 lg:col-span-5 lg:text-[15px]">
+                {it.d}
+              </p>
+              <div className="col-span-12 hidden text-right text-2xl text-gold/40 transition-colors group-hover:text-gold lg:col-span-1 lg:block">
+                →
+              </div>
             </div>
           ))}
         </div>
@@ -356,61 +396,86 @@ function Services() {
   );
 }
 
+
 function Showcase() {
-  // Bento grid of work — cinematic frames
+  const frames = [
+    { src: s1, alt: "Mandap at night", cls: "sm:col-span-4 sm:row-span-2 aspect-[16/10] sm:aspect-auto sm:min-h-[560px]", tag: "Reel 01 · Mandap", loc: "Udaipur" },
+    { src: s2, alt: "Bride portrait", cls: "sm:col-span-2 aspect-[3/4]", tag: "Reel 02 · Portrait", loc: "Jamnagar" },
+    { src: s3, alt: "Groom on horseback", cls: "sm:col-span-2 aspect-[3/4]", tag: "Reel 03 · Baraat", loc: "Rajkot" },
+    { src: hero, alt: "Bride detail", cls: "sm:col-span-3 aspect-[4/3]", tag: "Reel 04 · Details", loc: "Ahmedabad" },
+    { src: s4, alt: "Aerial venue", cls: "sm:col-span-3 aspect-[4/3]", tag: "Reel 05 · Aerial", loc: "Pan India" },
+  ];
   return (
-    <section id="showcase" className="relative py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+    <section id="showcase" className="relative overflow-hidden py-28 lg:py-40">
+      {/* Backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -left-6 top-16 select-none whitespace-nowrap text-[14vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.08)", color: "transparent" }}
+      >
+        The Archive
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6 border-b border-gold/15 pb-6">
           <div>
-            <span className="text-eyebrow">Selected Work</span>
-            <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-              The <em className="italic gold-text">archive.</em>
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 03 — Selected Work</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
+              The <em className="italic gold-text font-light">archive.</em>
             </h2>
           </div>
           <a
             href="https://www.instagram.com/hk.weddingfilms"
             target="_blank"
             rel="noreferrer"
-            className="text-xs uppercase tracking-[0.3em] text-ivory/70 transition-colors hover:text-gold"
+            className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-ivory/70 transition-colors hover:text-gold"
           >
-            Follow on Instagram →
+            <span className="h-px w-8 bg-gold/40 transition-all group-hover:w-14 group-hover:bg-gold" />
+            Follow on Instagram
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-6 sm:gap-5">
-          <Frame src={s1} alt="Mandap at night" className="sm:col-span-4 sm:row-span-2 aspect-[16/10] sm:aspect-auto sm:min-h-[520px]" />
-          <Frame src={s2} alt="Bride portrait" className="sm:col-span-2 aspect-[3/4]" />
-          <Frame src={s3} alt="Groom on horseback" className="sm:col-span-2 aspect-[3/4]" />
-          <Frame src={hero} alt="Bride detail" className="sm:col-span-3 aspect-[4/3]" />
-          <Frame src={s4} alt="Aerial venue" className="sm:col-span-3 aspect-[4/3]" />
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-6 sm:gap-5">
+          {frames.map((f, i) => (
+            <Frame key={i} num={i + 1} {...f} className={f.cls} />
+          ))}
         </div>
 
-        {/* Instagram embed */}
-        <div className="mt-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-eyebrow">Live from the Studio</span>
-            <h3 className="font-display mt-5 text-3xl text-ivory sm:text-4xl">
-              @hk.weddingfilms
-            </h3>
-            <p className="mt-4 text-sm font-light text-ivory/70">
-              Our latest reels, behind-the-scenes, and freshly graded frames.
-            </p>
+        {/* Instagram strip */}
+        <div className="mt-24 border-t border-gold/15 pt-16">
+          <div className="grid items-end gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-gold/60" />
+                <span className="text-eyebrow text-gold">Live from the Studio</span>
+              </div>
+              <h3 className="font-display mt-5 text-3xl text-ivory sm:text-5xl">
+                <span className="italic font-light">@</span>hk.weddingfilms
+              </h3>
+              <p className="mt-4 max-w-md text-sm font-light text-ivory/70">
+                Our latest reels, behind-the-scenes, and freshly graded frames —
+                straight from the cutting room.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <a
+                href="https://www.instagram.com/hk.weddingfilms"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-between gap-3 border border-gold/60 px-6 py-4 text-xs font-medium uppercase tracking-[0.3em] text-gold transition-all hover:bg-gold hover:text-wine-ink"
+              >
+                View Full Feed
+                <span>→</span>
+              </a>
+            </div>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <InstaCard handle="hk.weddingfilms" />
             <InstaCard handle="hk.weddingfilms" />
             <InstaCard handle="hk.weddingfilms" />
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="https://www.instagram.com/hk.weddingfilms"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 border border-gold/60 px-8 py-4 text-xs font-medium uppercase tracking-[0.3em] text-gold transition-all hover:bg-gold hover:text-emerald-ink"
-            >
-              View Full Instagram Feed →
-            </a>
           </div>
         </div>
       </div>
@@ -418,22 +483,54 @@ function Showcase() {
   );
 }
 
-function Frame({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+function Frame({
+  src,
+  alt,
+  className = "",
+  num,
+  tag,
+  loc,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  num?: number;
+  tag?: string;
+  loc?: string;
+}) {
   return (
     <figure className={`group relative overflow-hidden hover-lift ${className}`}>
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105"
+        className="h-full w-full object-cover grayscale-[10%] transition-all duration-[1500ms] ease-out group-hover:scale-105 group-hover:grayscale-0"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/70 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-90" />
-      <figcaption className="absolute bottom-5 left-5 text-[10px] uppercase tracking-[0.3em] text-ivory/80">
-        {alt}
+      <div className="absolute inset-0 bg-gradient-to-t from-wine-ink via-wine-ink/20 to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
+
+      {/* Corner index */}
+      {num && (
+        <span className="absolute left-4 top-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-ivory/80">
+          <span className="h-px w-5 bg-gold" />
+          {String(num).padStart(2, "0")}
+        </span>
+      )}
+
+      <figcaption className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5">
+        <div>
+          <div className="font-display text-xl italic text-ivory lg:text-2xl">{tag ?? alt}</div>
+          {loc && (
+            <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-gold/80">{loc}</div>
+          )}
+        </div>
+        <span className="hidden h-9 w-9 items-center justify-center border border-gold/50 text-gold transition-all group-hover:bg-gold group-hover:text-wine-ink sm:flex">
+          ▶
+        </span>
       </figcaption>
     </figure>
   );
 }
+
 
 function InstaCard({ handle }: { handle: string }) {
   return (
@@ -509,65 +606,107 @@ function Packages() {
   ];
 
   return (
-    <section id="packages" className="relative border-t border-border py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-eyebrow">Wedding Investment</span>
-          <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-            Three ways to <em className="italic gold-text">remember.</em>
-          </h2>
-          <p className="mt-6 text-sm font-light text-ivory/70">
-            Every package is a starting point. We're happy to tailor coverage to your dates, venues and rituals.
+    <section id="packages" className="relative overflow-hidden border-t border-gold/15 py-28 lg:py-40">
+      {/* Backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -right-10 bottom-10 select-none whitespace-nowrap text-[14vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.08)", color: "transparent" }}
+      >
+        Investment
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 04 — Wedding Investment</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
+              Three ways to <em className="italic gold-text font-light">remember.</em>
+            </h2>
+          </div>
+          <p className="text-sm font-light text-ivory/70 lg:col-span-5">
+            Every package is a starting point. We're happy to tailor coverage to your dates, venues and rituals — write to us and we'll send the full brochure within 24 hours.
           </p>
         </div>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-3">
-          {tiers.map((t) => (
+        <div className="mt-20 grid gap-px overflow-hidden border border-gold/20 bg-gold/15 lg:grid-cols-3">
+          {tiers.map((t, idx) => (
             <article
               key={t.name}
-              className={`relative flex flex-col border p-10 transition-all hover-lift lg:p-12 ${
+              className={`group relative flex flex-col p-10 transition-all lg:p-12 ${
                 t.featured
-                  ? "border-gold bg-gradient-to-b from-emerald-deep/80 to-emerald-ink"
-                  : "border-border bg-emerald-deep/30"
+                  ? "bg-gradient-to-b from-wine-deep to-wine-ink lg:scale-y-[1.04] lg:-my-1 lg:z-10 lg:shadow-2xl lg:shadow-wine-ink"
+                  : "bg-wine-ink/85 hover:bg-wine-deep/60"
               }`}
             >
               {t.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold px-4 py-1 text-[10px] uppercase tracking-[0.3em] text-emerald-ink">
+                <div className="absolute right-6 top-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
                   Most Booked
                 </div>
               )}
-              <div className="text-eyebrow">{t.name} Package</div>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-sm text-gold">₹</span>
-                <span className="font-display text-5xl text-ivory lg:text-6xl">{t.price}</span>
+
+              {/* Header */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-display text-[10px] uppercase tracking-[0.4em] text-gold/80">
+                    Package · 0{idx + 1}
+                  </div>
+                  <div className="font-display mt-2 text-3xl text-ivory lg:text-4xl">
+                    {t.name}
+                  </div>
+                </div>
+                <div className="text-right font-display text-5xl text-gold/20 transition-colors group-hover:text-gold/40 lg:text-6xl">
+                  0{idx + 1}
+                </div>
               </div>
-              <p className="mt-3 font-display italic text-ivory/70">{t.tagline}</p>
-              <span className="gold-divider mt-8" />
+
+              {/* Price block */}
+              <div className="mt-10 border-y border-gold/20 py-6">
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-sm text-gold">₹</span>
+                  <span className="font-display text-5xl font-extrabold text-ivory lg:text-[3.5rem]">
+                    {t.price}
+                  </span>
+                </div>
+                <p className="font-display mt-3 italic text-ivory/65">{t.tagline}</p>
+              </div>
+
               <ul className="mt-8 flex-1 space-y-4">
                 {t.features.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm font-light text-ivory/85">
-                    <span className="mt-1.5 inline-block h-1 w-3 shrink-0 bg-gold" />
+                  <li key={f} className="flex items-start gap-3 text-sm font-light text-ivory/85">
+                    <span className="mt-2 inline-block h-px w-4 shrink-0 bg-gold" />
                     {f}
                   </li>
                 ))}
               </ul>
+
               <a
                 href="#contact"
-                className={`mt-10 inline-flex w-full items-center justify-center px-6 py-4 text-xs font-medium uppercase tracking-[0.3em] transition-all ${
+                className={`group/btn mt-10 inline-flex w-full items-center justify-between px-6 py-4 text-xs font-medium uppercase tracking-[0.3em] transition-all ${
                   t.featured
-                    ? "bg-gold text-emerald-ink hover:bg-gold-soft"
-                    : "border border-gold/60 text-gold hover:bg-gold hover:text-emerald-ink"
+                    ? "bg-gold text-wine-ink hover:bg-gold-soft"
+                    : "border border-gold/50 text-gold hover:bg-gold hover:text-wine-ink"
                 }`}
               >
                 Reserve {t.name}
+                <span className="transition-transform group-hover/btn:translate-x-1">→</span>
               </a>
             </article>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-[10px] uppercase tracking-[0.3em] text-ivory/40">
+          Travel, taxes & destination logistics quoted separately · Limited dates per season
+        </p>
       </div>
     </section>
   );
 }
+
 
 function Testimonials() {
   const quotes = [
@@ -575,32 +714,75 @@ function Testimonials() {
       q: "They didn't just film our wedding — they remembered it for us. We cry every time we watch the highlight.",
       a: "Aanya & Vivaan",
       l: "Udaipur",
+      r: "Diamond Package",
     },
     {
       q: "Calm, kind, and so unbelievably talented. Every frame feels like a painting.",
       a: "Riya & Karan",
       l: "Jamnagar",
+      r: "Gold Package",
     },
     {
       q: "Worth every rupee. The album is the most beautiful thing in our home.",
       a: "Meher & Arjun",
       l: "Ahmedabad",
+      r: "Diamond Package",
     },
   ];
   return (
-    <section className="relative border-y border-border bg-emerald-deep/40 py-28 lg:py-36">
-      <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
-        <span className="text-eyebrow">Kind Words</span>
-        <div className="mt-12 grid gap-12 lg:grid-cols-3">
-          {quotes.map((t) => (
-            <figure key={t.a} className="flex flex-col items-center">
-              <div className="font-display text-5xl text-gold/60">"</div>
-              <blockquote className="font-display mt-4 text-xl italic leading-relaxed text-ivory lg:text-2xl">
+    <section className="relative overflow-hidden border-y border-gold/15 bg-wine-deep/40 py-28 lg:py-40">
+      {/* Giant quote backdrop */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 select-none text-[40rem] leading-none text-gold/[0.06]"
+      >
+        “
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-10 bg-gold/60" />
+            <span className="text-eyebrow text-gold">Chapter 05 — Kind Words</span>
+            <span className="h-px w-10 bg-gold/60" />
+          </div>
+          <h2 className="font-display mt-6 text-3xl leading-[1.1] text-ivory sm:text-4xl lg:text-5xl">
+            Stories from the <em className="italic gold-text font-light">couples we filmed.</em>
+          </h2>
+        </div>
+
+        <div className="mt-20 grid gap-px overflow-hidden border border-gold/20 bg-gold/15 lg:grid-cols-3">
+          {quotes.map((t, i) => (
+            <figure
+              key={t.a}
+              className="group relative flex flex-col bg-wine-ink/90 p-10 transition-colors hover:bg-wine-ink lg:p-12"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-display text-6xl leading-none text-gold/50">“</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/40">
+                  No. {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+
+              <blockquote className="font-display mt-6 flex-1 text-lg italic leading-relaxed text-ivory lg:text-xl">
                 {t.q}
               </blockquote>
-              <figcaption className="mt-8">
-                <div className="text-sm font-medium text-gold">{t.a}</div>
-                <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-ivory/60">{t.l}</div>
+
+              {/* Stars */}
+              <div className="mt-8 flex gap-1 text-gold">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <svg key={j} viewBox="0 0 24 24" className="h-3 w-3 fill-current" aria-hidden>
+                    <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
+                  </svg>
+                ))}
+              </div>
+
+              <figcaption className="mt-6 border-t border-gold/15 pt-6">
+                <div className="font-display text-xl italic text-ivory">{t.a}</div>
+                <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-[0.3em]">
+                  <span className="text-gold/80">{t.l}</span>
+                  <span className="text-ivory/40">{t.r}</span>
+                </div>
               </figcaption>
             </figure>
           ))}
@@ -612,20 +794,34 @@ function Testimonials() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-          <div>
-            <span className="text-eyebrow">Begin</span>
-            <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-              Tell us your <em className="italic gold-text">love story.</em>
+    <section id="contact" className="relative overflow-hidden py-28 lg:py-40">
+      {/* Backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -left-6 top-12 select-none whitespace-nowrap text-[14vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.07)", color: "transparent" }}
+      >
+        Let's begin
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-16">
+          {/* Left */}
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 06 — Begin</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
+              Tell us your <br />
+              <em className="italic gold-text font-light">love story.</em>
             </h2>
-            <p className="mt-6 max-w-md text-base font-light leading-relaxed text-ivory/75">
-              We take on a limited number of weddings each season. Reach out
-              early — especially for winter dates — and we'll send our full
-              brochure within 24 hours.
+            <p className="mt-8 max-w-md text-base font-light leading-relaxed text-ivory/75">
+              We take on a limited number of weddings each season. Reach out early
+              — especially for winter dates — and we'll send our full brochure within 24 hours.
             </p>
-            <div className="mt-12 space-y-6 border-t border-border pt-10">
+
+            <div className="mt-12 space-y-6 border-t border-gold/20 pt-10">
               <ContactRow label="Studio">
                 603 Nageswar Prabhu Palace, Ghanteshwar,<br />
                 Jamnagar — Rajkot, Gujarat 360006, India
@@ -637,8 +833,25 @@ function Contact() {
                 <a href="mailto:hello@hkweddingfilms.com" className="text-gold hover:underline">hello@hkweddingfilms.com</a>
               </ContactRow>
             </div>
+
+            {/* Availability card */}
+            <div className="mt-10 flex items-center gap-4 border border-gold/30 bg-wine-deep/40 p-5">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60 opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-gold" />
+              </span>
+              <div>
+                <div className="text-[11px] font-medium uppercase tracking-[0.3em] text-ivory">
+                  Now booking · Winter '26
+                </div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-ivory/55">
+                  4 dates remaining · Nov – Feb
+                </div>
+              </div>
+            </div>
           </div>
 
+          {/* Right form — paper card */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -646,26 +859,41 @@ function Contact() {
               const body = `Name: ${data.get("name")}%0AEmail: ${data.get("email")}%0APhone: ${data.get("phone")}%0ADate: ${data.get("date")}%0APackage: ${data.get("pkg")}%0AMessage: ${data.get("msg")}`;
               window.location.href = `mailto:hello@hkweddingfilms.com?subject=Wedding Enquiry — ${data.get("name")}&body=${body}`;
             }}
-            className="border border-border bg-emerald-deep/40 p-8 lg:p-12"
+            className="relative border border-gold/25 bg-gradient-to-b from-wine-deep/60 to-wine-ink p-8 shadow-2xl shadow-wine-ink/60 lg:col-span-7 lg:p-12"
           >
-            <div className="grid gap-6 sm:grid-cols-2">
+            {/* Corner ticks */}
+            <div className="pointer-events-none absolute -left-2 -top-2 h-8 w-8 border-l-2 border-t-2 border-gold" />
+            <div className="pointer-events-none absolute -right-2 -bottom-2 h-8 w-8 border-b-2 border-r-2 border-gold" />
+
+            <div className="flex items-center justify-between border-b border-gold/20 pb-5">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Enquiry Form</div>
+                <div className="font-display mt-1 text-xl italic text-ivory">Reel No. 2026 / __</div>
+              </div>
+              <div className="text-right text-[10px] uppercase tracking-[0.3em] text-ivory/40">
+                Reply within<br />24 hours
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <Field label="Your Name" name="name" required />
               <Field label="Phone" name="phone" type="tel" />
               <Field label="Email" name="email" type="email" required />
               <Field label="Wedding Date" name="date" type="date" />
             </div>
             <Field label="Package" name="pkg" as="select">
-              <option className="bg-emerald-ink">Silver — ₹75,000</option>
-              <option className="bg-emerald-ink">Gold — ₹1,75,000</option>
-              <option className="bg-emerald-ink">Diamond — ₹2,55,000</option>
-              <option className="bg-emerald-ink">Not sure yet</option>
+              <option className="bg-wine-ink">Silver — ₹75,000</option>
+              <option className="bg-wine-ink">Gold — ₹1,75,000</option>
+              <option className="bg-wine-ink">Diamond — ₹2,55,000</option>
+              <option className="bg-wine-ink">Not sure yet</option>
             </Field>
             <Field label="Tell us about your wedding" name="msg" as="textarea" />
             <button
               type="submit"
-              className="mt-8 inline-flex w-full items-center justify-center bg-gold px-8 py-4 text-xs font-medium uppercase tracking-[0.3em] text-emerald-ink transition-all hover:bg-gold-soft"
+              className="group mt-8 inline-flex w-full items-center justify-between bg-gold px-8 py-5 text-xs font-medium uppercase tracking-[0.3em] text-wine-ink transition-all hover:bg-gold-soft"
             >
-              Send Enquiry →
+              Send Enquiry
+              <span className="transition-transform group-hover:translate-x-1">→</span>
             </button>
           </form>
         </div>
@@ -673,6 +901,7 @@ function Contact() {
     </section>
   );
 }
+
 
 function ContactRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -717,21 +946,69 @@ function Field({
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 text-center md:flex-row md:text-left lg:px-10">
-        <div className="flex items-center gap-4">
-          <img src={logo} alt="HK Production" className="h-10 w-auto" />
-          <div className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
-            HK Wedding Films · Gujarat
+    <footer className="relative overflow-hidden border-t border-gold/20 bg-wine-ink">
+      {/* Oversized brand mark */}
+      <div className="mx-auto max-w-7xl px-6 pt-20 lg:px-10">
+        <div
+          aria-hidden
+          className="font-display select-none text-[20vw] font-extrabold uppercase leading-[0.85] tracking-tighter gold-text"
+        >
+          HK Wedding<br />
+          <span className="italic font-light text-ivory/15">Films.</span>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-16 max-w-7xl border-t border-gold/15 px-6 py-10 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-4">
+              <img src={logo} alt="HK Production" className="h-12 w-auto" />
+              <div>
+                <div className="font-display text-lg text-ivory">HK Wedding Films</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-gold/70">A Film Studio · Gujarat</div>
+              </div>
+            </div>
+            <p className="mt-5 max-w-sm text-sm font-light text-ivory/60">
+              Cinematic wedding films & editorial photography for couples who want the day remembered the way it actually felt.
+            </p>
+          </div>
+
+          <div className="lg:col-span-3">
+            <div className="text-eyebrow text-gold/70">Explore</div>
+            <ul className="mt-4 space-y-3 text-sm font-light text-ivory/70">
+              {[["Work", "#showcase"], ["Story", "#story"], ["Packages", "#packages"], ["Contact", "#contact"]].map(([l, h]) => (
+                <li key={l}><a href={h} className="hover:text-gold">{l}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4">
+            <div className="text-eyebrow text-gold/70">Studio</div>
+            <p className="mt-4 text-sm font-light leading-relaxed text-ivory/70">
+              603 Nageswar Prabhu Palace, Ghanteshwar,<br />
+              Jamnagar — Rajkot, Gujarat 360006
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 text-[11px] uppercase tracking-[0.25em]">
+              <a href="https://www.instagram.com/hk.weddingfilms" target="_blank" rel="noreferrer" className="text-gold hover:underline">Instagram</a>
+              <span className="text-ivory/20">·</span>
+              <a href="mailto:hello@hkweddingfilms.com" className="text-gold hover:underline">Email</a>
+            </div>
           </div>
         </div>
-        <div className="text-[10px] uppercase tracking-[0.3em] text-ivory/40">
-          © {new Date().getFullYear()} HK Production · Crafted with care
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gold/15 pt-6 text-[10px] uppercase tracking-[0.3em] text-ivory/40 md:flex-row">
+          <div>© {new Date().getFullYear()} HK Production · Crafted with care in Gujarat</div>
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-gold/40" />
+            We film love, not weddings.
+            <span className="h-px w-8 bg-gold/40" />
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+
 
 function Home() {
   return (
