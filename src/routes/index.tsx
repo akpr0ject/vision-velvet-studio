@@ -256,39 +256,7 @@ function Story() {
 
             {/* Editorial serif headline */}
             <h2 className="mt-8 text-ivory">
-              <span className="font-serif block text-[12vw] font-light leading-[0.95] tracking-tight sm:text-6xl lg:text-[5.5rem]">
-                A wedding
-              </span>
-              <span className="font-serif mt-1 block text-[10vw] italic font-light leading-[1] text-ivory/55 sm:text-5xl lg:text-[4.25rem]">
-                is a single day.
-              </span>
-
-              <span className="mt-6 flex items-center gap-4">
-                <span className="h-px w-12 shrink-0 bg-gold" />
-                <span className="text-[10px] uppercase tracking-[0.4em] text-gold">&amp; yet —</span>
-              </span>
-
-              <span className="font-serif relative mt-4 block text-[14vw] italic leading-[0.95] tracking-tight sm:text-7xl lg:text-[7rem]">
-                <span className="gold-text">a film</span>{" "}
-                <span className="text-ivory">is</span>{" "}
-                <span className="gold-text">forever</span>
-                <span className="text-gold">.</span>
-                {/* hand-drawn flourish */}
-                <svg
-                  className="absolute -bottom-3 left-0 w-[60%] text-gold/70"
-                  viewBox="0 0 600 24"
-                  fill="none"
-                  preserveAspectRatio="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M4 14 C 120 2, 260 22, 380 10 S 560 6, 596 14"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+              {"\n"}
             </h2>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-[auto_1fr]">
