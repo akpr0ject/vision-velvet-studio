@@ -249,60 +249,74 @@ function Story() {
 
           {/* Right: copy */}
           <div className="lg:col-span-7 lg:pl-8">
-            <div className="flex items-baseline gap-4">
-              <span className="font-display text-5xl font-extralight text-gold/60">“</span>
-              <span className="text-eyebrow text-ivory/60">A Note From The Studio</span>
+            <div className="flex items-center gap-4">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold/90">A Note From The Studio</span>
             </div>
 
-            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
-              A wedding is a <span className="italic font-light text-ivory/85">single day.</span>
-              <br />
-              <span className="relative inline-block">
-                <span className="italic gold-text">A film is forever</span>
+            {/* Editorial serif headline */}
+            <h2 className="mt-8 text-ivory">
+              <span className="font-serif block text-[12vw] font-light leading-[0.95] tracking-tight sm:text-6xl lg:text-[5.5rem]">
+                A wedding
+              </span>
+              <span className="font-serif mt-1 block text-[10vw] italic font-light leading-[1] text-ivory/55 sm:text-5xl lg:text-[4.25rem]">
+                is a single day.
+              </span>
+
+              <span className="mt-6 flex items-center gap-4">
+                <span className="h-px w-12 shrink-0 bg-gold" />
+                <span className="text-[10px] uppercase tracking-[0.4em] text-gold">&amp; yet —</span>
+              </span>
+
+              <span className="font-serif relative mt-4 block text-[14vw] italic leading-[0.95] tracking-tight sm:text-7xl lg:text-[7rem]">
+                <span className="gold-text">a film</span>{" "}
+                <span className="text-ivory">is</span>{" "}
+                <span className="gold-text">forever</span>
+                <span className="text-gold">.</span>
+                {/* hand-drawn flourish */}
                 <svg
-                  className="absolute -bottom-2 left-0 w-full"
-                  height="14"
-                  viewBox="0 0 400 14"
+                  className="absolute -bottom-3 left-0 w-[60%] text-gold/70"
+                  viewBox="0 0 600 24"
                   fill="none"
                   preserveAspectRatio="none"
                   aria-hidden
                 >
                   <path
-                    d="M2 9 C 100 1, 200 14, 398 5"
-                    stroke="oklch(0.76 0.13 78)"
+                    d="M4 14 C 120 2, 260 22, 380 10 S 560 6, 596 14"
+                    stroke="currentColor"
                     strokeWidth="1.4"
                     strokeLinecap="round"
                   />
                 </svg>
               </span>
-              <span className="text-gold">.</span>
             </h2>
 
-            <div className="mt-10 grid gap-8 sm:grid-cols-[auto_1fr]">
+            <div className="mt-14 grid gap-8 sm:grid-cols-[auto_1fr]">
               <div className="hidden sm:block">
-                <div className="font-display text-6xl font-extrabold leading-none text-gold/80">B</div>
+                <div className="font-serif text-7xl font-light leading-none text-gold">B</div>
                 <span className="mt-3 block h-px w-10 bg-gold/40" />
               </div>
-              <p className="text-base font-light leading-relaxed text-ivory/75 lg:text-[17px]">
-                <span className="sm:hidden">B</span>orn from a love for cinema and the quiet beauty of Indian rituals,
+              <p className="text-base font-light leading-[1.85] text-ivory/75 lg:text-[17px]">
+                <span className="sm:hidden font-serif text-3xl text-gold">B</span>orn from a love for cinema and the quiet beauty of Indian rituals,
                 HK Wedding Films approaches every wedding as a story waiting to be told.
-                We don't direct — <em className="italic text-ivory/90">we observe.</em> We don't pose —
-                <em className="italic text-ivory/90"> we listen.</em> The result is unhurried, deeply personal
-                imagery that feels less like a wedding video and more like a memory you can return to.
+                We don't direct — <em className="font-serif italic text-ivory">we observe.</em>
+                We don't pose — <em className="font-serif italic text-ivory">we listen.</em>
+                The result is unhurried, deeply personal imagery that feels less like a wedding video
+                and more like <em className="font-serif italic text-gold">a memory you can return to.</em>
               </p>
             </div>
 
             {/* Signature */}
-            <div className="mt-10 flex items-center gap-4">
-              <span
-                className="font-display text-3xl italic font-light text-gold"
-                style={{ fontFamily: "'Plus Jakarta Sans', serif" }}
-              >
+            <div className="mt-12 flex items-center gap-5">
+              <span className="font-serif text-4xl italic font-light text-gold">
                 Harsh K.
               </span>
-              <span className="h-px w-12 bg-gold/40" />
-              <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">Founder · Director</span>
+              <span className="h-px w-16 bg-gold/40" />
+              <span className="text-[10px] uppercase tracking-[0.35em] text-ivory/55">
+                Founder<br />Director of Photography
+              </span>
             </div>
+
 
             {/* Stats — editorial */}
             <div className="relative mt-16 grid grid-cols-3">
