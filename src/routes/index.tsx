@@ -586,7 +586,7 @@ function Packages() {
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">Chapter 04 — Wedding Investment</span>
+              <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               Three ways to <em className="italic gold-text font-light">remember.</em>
