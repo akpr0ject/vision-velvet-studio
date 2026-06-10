@@ -947,16 +947,20 @@ function Field({
 function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-gold/20 bg-wine-ink">
-      {/* Oversized brand mark */}
-      <div className="mx-auto max-w-7xl px-6 pt-20 lg:px-10">
-        <div
-          aria-hidden
-          className="font-display select-none text-[20vw] font-extrabold uppercase leading-[0.85] tracking-tighter gold-text"
-        >
-          HK Wedding<br />
-          <span className="italic font-light text-ivory/15">Films.</span>
+      {/* Oversized brand mark — single-line right-to-left marquee */}
+      <div className="overflow-hidden pt-16 pb-4">
+        <div className="flex w-max animate-marquee gap-16 whitespace-nowrap font-display text-[14vw] font-extrabold uppercase leading-[0.9] tracking-tighter gold-text">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <span key={i} className="flex items-center gap-16">
+              HK Wedding <span className="italic font-light text-ivory/20">Films.</span>
+              <svg width="28" height="28" viewBox="0 0 24 24" className="text-gold/70" aria-hidden>
+                <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" fill="currentColor" />
+              </svg>
+            </span>
+          ))}
         </div>
       </div>
+
 
       <div className="mx-auto mt-16 max-w-7xl border-t border-gold/15 px-6 py-10 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-12">
