@@ -57,21 +57,21 @@
 
   --background: var(--wine-ink);
   --foreground: var(--ivory);
-  --card: oklch(0.22 0.06 22);
+  --card: oklch(0.24 0.06 215);
   --card-foreground: var(--ivory);
   --popover: var(--wine-deep);
   --popover-foreground: var(--ivory);
   --primary: var(--gold);
   --primary-foreground: var(--wine-ink);
-  --secondary: oklch(0.24 0.06 22);
+  --secondary: oklch(0.26 0.06 215);
   --secondary-foreground: var(--ivory);
-  --muted: oklch(0.22 0.05 22);
-  --muted-foreground: oklch(0.78 0.02 80);
+  --muted: oklch(0.24 0.05 215);
+  --muted-foreground: oklch(0.80 0.02 200);
   --accent: var(--gold);
   --accent-foreground: var(--wine-ink);
-  --destructive: oklch(0.55 0.22 27);
+  --destructive: oklch(0.58 0.22 27);
   --destructive-foreground: var(--ivory);
-  --border: oklch(0.76 0.13 78 / 22%);
+  --border: oklch(0.80 0.13 82 / 22%);
   --input: oklch(1 0 0 / 12%);
   --ring: var(--gold);
 }
