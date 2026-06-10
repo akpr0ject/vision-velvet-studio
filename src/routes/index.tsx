@@ -116,7 +116,7 @@ function Hero() {
               love<span className="gold-text">.</span>
             </span>
             <span className="font-display text-[8vw] font-medium tracking-tight text-ivory/85 sm:text-4xl lg:text-5xl">
-              not <em className="italic font-light gold-text">weddings.</em>
+              and <em className="italic font-light gold-text">weddings.</em>
             </span>
           </h1>
 
@@ -197,7 +197,7 @@ function Story() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         {/* Top editorial bar */}
         <div className="flex items-end justify-between border-b border-gold/20 pb-6">
-          <span className="text-eyebrow text-gold">— The Studio · Est. 2017</span>
+          <span className="text-eyebrow text-gold">{"\n"}</span>
           <span className="hidden text-[10px] uppercase tracking-[0.4em] text-ivory/40 md:block">Ahmedabad · Gujarat</span>
         </div>
 
@@ -251,44 +251,12 @@ function Story() {
           <div className="lg:col-span-7 lg:pl-8">
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold/90">A Note From The Studio</span>
+              <span className="text-eyebrow text-gold/90">{"\n"}</span>
             </div>
 
             {/* Editorial serif headline */}
             <h2 className="mt-8 text-ivory">
-              <span className="font-serif block text-[12vw] font-light leading-[0.95] tracking-tight sm:text-6xl lg:text-[5.5rem]">
-                A wedding
-              </span>
-              <span className="font-serif mt-1 block text-[10vw] italic font-light leading-[1] text-ivory/55 sm:text-5xl lg:text-[4.25rem]">
-                is a single day.
-              </span>
-
-              <span className="mt-6 flex items-center gap-4">
-                <span className="h-px w-12 shrink-0 bg-gold" />
-                <span className="text-[10px] uppercase tracking-[0.4em] text-gold">&amp; yet —</span>
-              </span>
-
-              <span className="font-serif relative mt-4 block text-[14vw] italic leading-[0.95] tracking-tight sm:text-7xl lg:text-[7rem]">
-                <span className="gold-text">a film</span>{" "}
-                <span className="text-ivory">is</span>{" "}
-                <span className="gold-text">forever</span>
-                <span className="text-gold">.</span>
-                {/* hand-drawn flourish */}
-                <svg
-                  className="absolute -bottom-3 left-0 w-[60%] text-gold/70"
-                  viewBox="0 0 600 24"
-                  fill="none"
-                  preserveAspectRatio="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M4 14 C 120 2, 260 22, 380 10 S 560 6, 596 14"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
+              {"\n"}
             </h2>
 
             <div className="mt-14 grid gap-8 sm:grid-cols-[auto_1fr]">
@@ -297,33 +265,16 @@ function Story() {
                 <span className="mt-3 block h-px w-10 bg-gold/40" />
               </div>
               <p className="text-base font-light leading-[1.85] text-ivory/75 lg:text-[17px]">
-                <span className="sm:hidden font-serif text-3xl text-gold">B</span>orn from a love for cinema and the quiet beauty of Indian rituals,
-                HK Wedding Films approaches every wedding as a story waiting to be told.
-                We don't direct — <em className="font-serif italic text-ivory">we observe.</em>
-                We don't pose — <em className="font-serif italic text-ivory">we listen.</em>
-                The result is unhurried, deeply personal imagery that feels less like a wedding video
-                and more like <em className="font-serif italic text-gold">a memory you can return to.</em>
+                <span className="sm:hidden font-serif text-3xl text-gold">B</span>orn from a love for cinema and the quiet beauty of Indian rituals, HK Wedding Films approaches every wedding as a story waiting to be told. We don't direct — we observe.We don't pose — we listen.The result is unhurried, deeply personal imagery that feels less like a wedding video and more like a memory you can return to.
               </p>
             </div>
-
-            {/* Signature */}
-            <div className="mt-12 flex items-center gap-5">
-              <span className="font-serif text-4xl italic font-light text-gold">
-                Harsh K.
-              </span>
-              <span className="h-px w-16 bg-gold/40" />
-              <span className="text-[10px] uppercase tracking-[0.35em] text-ivory/55">
-                Founder<br />Director of Photography
-              </span>
-            </div>
-
 
             {/* Stats — editorial */}
             <div className="relative mt-16 grid grid-cols-3">
               {[
-                ["120+", "Weddings", "01"],
-                ["8 Yrs", "Crafting", "02"],
-                ["Pan", "India", "03"],
+                ["120+", "WEDDINGS", "01"],
+                ["8 Yrs", "CRAFTING", "02"],
+                ["Pan", "INDIA", "03"],
               ].map(([n, l, i], idx) => (
                 <div
                   key={l}
@@ -368,7 +319,7 @@ function Services() {
           <div className="lg:col-span-6">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">Chapter 02 — What We Do</span>
+              <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               Every craft, <br />
@@ -435,7 +386,7 @@ function Showcase() {
           <div>
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">Chapter 03 — Selected Work</span>
+              <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               The <em className="italic gold-text font-light">archive.</em>
@@ -464,7 +415,7 @@ function Showcase() {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-gold/60" />
-                <span className="text-eyebrow text-gold">Live from the Studio</span>
+                <span className="text-eyebrow text-gold">{"\n"}</span>
               </div>
               <h3 className="font-display mt-5 text-3xl text-ivory sm:text-5xl">
                 <span className="italic font-light">@</span>hk.weddingfilms
@@ -635,7 +586,7 @@ function Packages() {
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">Chapter 04 — Wedding Investment</span>
+              <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               Three ways to <em className="italic gold-text font-light">remember.</em>
@@ -757,7 +708,7 @@ function Testimonials() {
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
-            <span className="text-eyebrow text-gold">Chapter 05 — Kind Words</span>
+            <span className="text-eyebrow text-gold">{"\n"}</span>
             <span className="h-px w-10 bg-gold/60" />
           </div>
           <h2 className="font-display mt-6 text-3xl leading-[1.1] text-ivory sm:text-4xl lg:text-5xl">
@@ -824,7 +775,7 @@ function Contact() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">Chapter 06 — Begin</span>
+              <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
               Tell us your <br />
