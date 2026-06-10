@@ -714,32 +714,75 @@ function Testimonials() {
       q: "They didn't just film our wedding — they remembered it for us. We cry every time we watch the highlight.",
       a: "Aanya & Vivaan",
       l: "Udaipur",
+      r: "Diamond Package",
     },
     {
       q: "Calm, kind, and so unbelievably talented. Every frame feels like a painting.",
       a: "Riya & Karan",
       l: "Jamnagar",
+      r: "Gold Package",
     },
     {
       q: "Worth every rupee. The album is the most beautiful thing in our home.",
       a: "Meher & Arjun",
       l: "Ahmedabad",
+      r: "Diamond Package",
     },
   ];
   return (
-    <section className="relative border-y border-border bg-emerald-deep/40 py-28 lg:py-36">
-      <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
-        <span className="text-eyebrow">Kind Words</span>
-        <div className="mt-12 grid gap-12 lg:grid-cols-3">
-          {quotes.map((t) => (
-            <figure key={t.a} className="flex flex-col items-center">
-              <div className="font-display text-5xl text-gold/60">"</div>
-              <blockquote className="font-display mt-4 text-xl italic leading-relaxed text-ivory lg:text-2xl">
+    <section className="relative overflow-hidden border-y border-gold/15 bg-wine-deep/40 py-28 lg:py-40">
+      {/* Giant quote backdrop */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 select-none text-[40rem] leading-none text-gold/[0.06]"
+      >
+        “
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-10 bg-gold/60" />
+            <span className="text-eyebrow text-gold">Chapter 05 — Kind Words</span>
+            <span className="h-px w-10 bg-gold/60" />
+          </div>
+          <h2 className="font-display mt-6 text-3xl leading-[1.1] text-ivory sm:text-4xl lg:text-5xl">
+            Stories from the <em className="italic gold-text font-light">couples we filmed.</em>
+          </h2>
+        </div>
+
+        <div className="mt-20 grid gap-px overflow-hidden border border-gold/20 bg-gold/15 lg:grid-cols-3">
+          {quotes.map((t, i) => (
+            <figure
+              key={t.a}
+              className="group relative flex flex-col bg-wine-ink/90 p-10 transition-colors hover:bg-wine-ink lg:p-12"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-display text-6xl leading-none text-gold/50">“</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/40">
+                  No. {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+
+              <blockquote className="font-display mt-6 flex-1 text-lg italic leading-relaxed text-ivory lg:text-xl">
                 {t.q}
               </blockquote>
-              <figcaption className="mt-8">
-                <div className="text-sm font-medium text-gold">{t.a}</div>
-                <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-ivory/60">{t.l}</div>
+
+              {/* Stars */}
+              <div className="mt-8 flex gap-1 text-gold">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <svg key={j} viewBox="0 0 24 24" className="h-3 w-3 fill-current" aria-hidden>
+                    <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
+                  </svg>
+                ))}
+              </div>
+
+              <figcaption className="mt-6 border-t border-gold/15 pt-6">
+                <div className="font-display text-xl italic text-ivory">{t.a}</div>
+                <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-[0.3em]">
+                  <span className="text-gold/80">{t.l}</span>
+                  <span className="text-ivory/40">{t.r}</span>
+                </div>
               </figcaption>
             </figure>
           ))}
@@ -751,20 +794,34 @@ function Testimonials() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-          <div>
-            <span className="text-eyebrow">Begin</span>
-            <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-              Tell us your <em className="italic gold-text">love story.</em>
+    <section id="contact" className="relative overflow-hidden py-28 lg:py-40">
+      {/* Backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -left-6 top-12 select-none whitespace-nowrap text-[14vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.07)", color: "transparent" }}
+      >
+        Let's begin
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-16">
+          {/* Left */}
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 06 — Begin</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
+              Tell us your <br />
+              <em className="italic gold-text font-light">love story.</em>
             </h2>
-            <p className="mt-6 max-w-md text-base font-light leading-relaxed text-ivory/75">
-              We take on a limited number of weddings each season. Reach out
-              early — especially for winter dates — and we'll send our full
-              brochure within 24 hours.
+            <p className="mt-8 max-w-md text-base font-light leading-relaxed text-ivory/75">
+              We take on a limited number of weddings each season. Reach out early
+              — especially for winter dates — and we'll send our full brochure within 24 hours.
             </p>
-            <div className="mt-12 space-y-6 border-t border-border pt-10">
+
+            <div className="mt-12 space-y-6 border-t border-gold/20 pt-10">
               <ContactRow label="Studio">
                 603 Nageswar Prabhu Palace, Ghanteshwar,<br />
                 Jamnagar — Rajkot, Gujarat 360006, India
@@ -776,8 +833,25 @@ function Contact() {
                 <a href="mailto:hello@hkweddingfilms.com" className="text-gold hover:underline">hello@hkweddingfilms.com</a>
               </ContactRow>
             </div>
+
+            {/* Availability card */}
+            <div className="mt-10 flex items-center gap-4 border border-gold/30 bg-wine-deep/40 p-5">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold/60 opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-gold" />
+              </span>
+              <div>
+                <div className="text-[11px] font-medium uppercase tracking-[0.3em] text-ivory">
+                  Now booking · Winter '26
+                </div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-ivory/55">
+                  4 dates remaining · Nov – Feb
+                </div>
+              </div>
+            </div>
           </div>
 
+          {/* Right form — paper card */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -785,26 +859,41 @@ function Contact() {
               const body = `Name: ${data.get("name")}%0AEmail: ${data.get("email")}%0APhone: ${data.get("phone")}%0ADate: ${data.get("date")}%0APackage: ${data.get("pkg")}%0AMessage: ${data.get("msg")}`;
               window.location.href = `mailto:hello@hkweddingfilms.com?subject=Wedding Enquiry — ${data.get("name")}&body=${body}`;
             }}
-            className="border border-border bg-emerald-deep/40 p-8 lg:p-12"
+            className="relative border border-gold/25 bg-gradient-to-b from-wine-deep/60 to-wine-ink p-8 shadow-2xl shadow-wine-ink/60 lg:col-span-7 lg:p-12"
           >
-            <div className="grid gap-6 sm:grid-cols-2">
+            {/* Corner ticks */}
+            <div className="pointer-events-none absolute -left-2 -top-2 h-8 w-8 border-l-2 border-t-2 border-gold" />
+            <div className="pointer-events-none absolute -right-2 -bottom-2 h-8 w-8 border-b-2 border-r-2 border-gold" />
+
+            <div className="flex items-center justify-between border-b border-gold/20 pb-5">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Enquiry Form</div>
+                <div className="font-display mt-1 text-xl italic text-ivory">Reel No. 2026 / __</div>
+              </div>
+              <div className="text-right text-[10px] uppercase tracking-[0.3em] text-ivory/40">
+                Reply within<br />24 hours
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <Field label="Your Name" name="name" required />
               <Field label="Phone" name="phone" type="tel" />
               <Field label="Email" name="email" type="email" required />
               <Field label="Wedding Date" name="date" type="date" />
             </div>
             <Field label="Package" name="pkg" as="select">
-              <option className="bg-emerald-ink">Silver — ₹75,000</option>
-              <option className="bg-emerald-ink">Gold — ₹1,75,000</option>
-              <option className="bg-emerald-ink">Diamond — ₹2,55,000</option>
-              <option className="bg-emerald-ink">Not sure yet</option>
+              <option className="bg-wine-ink">Silver — ₹75,000</option>
+              <option className="bg-wine-ink">Gold — ₹1,75,000</option>
+              <option className="bg-wine-ink">Diamond — ₹2,55,000</option>
+              <option className="bg-wine-ink">Not sure yet</option>
             </Field>
             <Field label="Tell us about your wedding" name="msg" as="textarea" />
             <button
               type="submit"
-              className="mt-8 inline-flex w-full items-center justify-center bg-gold px-8 py-4 text-xs font-medium uppercase tracking-[0.3em] text-emerald-ink transition-all hover:bg-gold-soft"
+              className="group mt-8 inline-flex w-full items-center justify-between bg-gold px-8 py-5 text-xs font-medium uppercase tracking-[0.3em] text-wine-ink transition-all hover:bg-gold-soft"
             >
-              Send Enquiry →
+              Send Enquiry
+              <span className="transition-transform group-hover:translate-x-1">→</span>
             </button>
           </form>
         </div>
@@ -812,6 +901,7 @@ function Contact() {
     </section>
   );
 }
+
 
 function ContactRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
