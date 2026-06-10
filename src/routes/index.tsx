@@ -708,7 +708,7 @@ function Testimonials() {
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
-            <span className="text-eyebrow text-gold">Chapter 05 — Kind Words</span>
+            <span className="text-eyebrow text-gold">{"\n"}</span>
             <span className="h-px w-10 bg-gold/60" />
           </div>
           <h2 className="font-display mt-6 text-3xl leading-[1.1] text-ivory sm:text-4xl lg:text-5xl">
