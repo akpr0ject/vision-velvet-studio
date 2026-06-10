@@ -105,9 +105,10 @@
 
 @utility font-display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
 }
+
 
 @utility text-eyebrow {
   font-family: var(--font-sans);
