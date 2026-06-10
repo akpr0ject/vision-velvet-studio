@@ -109,14 +109,14 @@ function Hero() {
 
           {/* Editorial mixed-weight headline */}
           <h1 className="relative mt-7 flex flex-col items-center gap-1 leading-[0.92] text-ivory">
-            <span className="font-display text-[10vw] font-light italic tracking-tight text-ivory/85 sm:text-5xl lg:text-6xl">
+            <span className="font-display text-[10vw] font-light tracking-tight text-ivory/85 sm:text-5xl lg:text-6xl">
               we film
             </span>
             <span className="font-display text-[18vw] font-extrabold uppercase tracking-[-0.04em] sm:text-8xl lg:text-[8.5rem]">
               love<span className="gold-text">.</span>
             </span>
             <span className="font-display text-[8vw] font-medium tracking-tight text-ivory/85 sm:text-4xl lg:text-5xl">
-              and <em className="italic font-light gold-text">weddings.</em>
+              and <em className="font-light gold-text">weddings.</em>
             </span>
           </h1>
 
@@ -164,7 +164,7 @@ function Marquee() {
   const row = [...words, ...words];
   return (
     <div className="relative overflow-hidden border-y border-gold/20 bg-wine-deep/40 py-8">
-      <div className="flex w-max animate-marquee gap-14 whitespace-nowrap pr-14 font-display text-3xl italic text-gold/85 sm:text-4xl lg:text-5xl">
+      <div className="flex w-max animate-marquee gap-14 whitespace-nowrap pr-14 font-display text-3xl text-gold/85 sm:text-4xl lg:text-5xl">
         {row.map((w, i) => (
           <span key={i} className="flex items-center gap-14">
             <span className="font-extralight">{w}</span>
@@ -323,7 +323,7 @@ function Services() {
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               Every craft, <br />
-              <em className="italic gold-text font-light">under one roof.</em>
+              <em className="gold-text font-light">under one roof.</em>
             </h2>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
@@ -341,7 +341,7 @@ function Services() {
               key={it.t}
               className="group grid cursor-default grid-cols-12 items-center gap-6 py-8 transition-colors hover:bg-wine-ink/40 lg:py-10"
             >
-              <div className="col-span-2 font-display text-sm italic text-gold/70 lg:col-span-1 lg:text-base">
+              <div className="col-span-2 font-display text-sm text-gold/70 lg:col-span-1 lg:text-base">
                 / 0{i + 1}
               </div>
               <h3 className="font-display col-span-10 text-2xl text-ivory transition-transform duration-500 group-hover:translate-x-2 lg:col-span-5 lg:text-4xl">
@@ -389,7 +389,7 @@ function Showcase() {
               <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
-              The <em className="italic gold-text font-light">archive.</em>
+              The <em className="gold-text font-light">archive.</em>
             </h2>
           </div>
           <a
@@ -418,7 +418,7 @@ function Showcase() {
                 <span className="text-eyebrow text-gold">{"\n"}</span>
               </div>
               <h3 className="font-display mt-5 text-3xl text-ivory sm:text-5xl">
-                <span className="italic font-light">@</span>hk.weddingfilms
+                <span className="font-light">@</span>hk.weddingfilms
               </h3>
               <p className="mt-4 max-w-md text-sm font-light text-ivory/70">
                 Our latest reels, behind-the-scenes, and freshly graded frames —
@@ -483,7 +483,7 @@ function Frame({
 
       <figcaption className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5">
         <div>
-          <div className="font-display text-xl italic text-ivory lg:text-2xl">{tag ?? alt}</div>
+          <div className="font-display text-xl text-ivory lg:text-2xl">{tag ?? alt}</div>
           {loc && (
             <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-gold/80">{loc}</div>
           )}
@@ -514,7 +514,7 @@ function InstaCard({ handle }: { handle: string }) {
           </svg>
         </div>
         <div>
-          <div className="font-display text-xl italic text-ivory">Latest Reel</div>
+          <div className="font-display text-xl text-ivory">Latest Reel</div>
           <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-ivory/60">
             @{handle} →
           </div>
@@ -589,7 +589,7 @@ function Packages() {
               <span className="text-eyebrow text-gold">{"\n"}</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
-              Three ways to <em className="italic gold-text font-light">remember.</em>
+              Three ways to <em className="gold-text font-light">remember.</em>
             </h2>
           </div>
           <p className="text-sm font-light text-ivory/70 lg:col-span-5">
@@ -637,7 +637,7 @@ function Packages() {
                     {t.price}
                   </span>
                 </div>
-                <p className="font-display mt-3 italic text-ivory/65">{t.tagline}</p>
+                <p className="font-display mt-3 text-ivory/65">{t.tagline}</p>
               </div>
 
               <ul className="mt-8 flex-1 space-y-4">
@@ -712,7 +712,7 @@ function Testimonials() {
             <span className="h-px w-10 bg-gold/60" />
           </div>
           <h2 className="font-display mt-6 text-3xl leading-[1.1] text-ivory sm:text-4xl lg:text-5xl">
-            Stories from the <em className="italic gold-text font-light">couples we filmed.</em>
+            Stories from the <em className="gold-text font-light">couples we filmed.</em>
           </h2>
         </div>
 
@@ -729,7 +729,7 @@ function Testimonials() {
                 </span>
               </div>
 
-              <blockquote className="font-display mt-6 flex-1 text-lg italic leading-relaxed text-ivory lg:text-xl">
+              <blockquote className="font-display mt-6 flex-1 text-lg leading-relaxed text-ivory lg:text-xl">
                 {t.q}
               </blockquote>
 
@@ -743,7 +743,7 @@ function Testimonials() {
               </div>
 
               <figcaption className="mt-6 border-t border-gold/15 pt-6">
-                <div className="font-display text-xl italic text-ivory">{t.a}</div>
+                <div className="font-display text-xl text-ivory">{t.a}</div>
                 <div className="mt-2 flex items-center justify-between text-[10px] uppercase tracking-[0.3em]">
                   <span className="text-gold/80">{t.l}</span>
                   <span className="text-ivory/40">{t.r}</span>
@@ -779,7 +779,7 @@ function Contact() {
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
               Tell us your <br />
-              <em className="italic gold-text font-light">love story.</em>
+              <em className="gold-text font-light">love story.</em>
             </h2>
             <p className="mt-8 max-w-md text-base font-light leading-relaxed text-ivory/75">
               We take on a limited number of weddings each season. Reach out early
@@ -833,7 +833,7 @@ function Contact() {
             <div className="flex items-center justify-between border-b border-gold/20 pb-5">
               <div>
                 <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Enquiry Form</div>
-                <div className="font-display mt-1 text-xl italic text-ivory">Reel No. 2026 / __</div>
+                <div className="font-display mt-1 text-xl text-ivory">Reel No. 2026 / __</div>
               </div>
               <div className="text-right text-[10px] uppercase tracking-[0.3em] text-ivory/40">
                 Reply within<br />24 hours
@@ -917,7 +917,7 @@ function Footer() {
         <div className="flex w-max animate-marquee gap-16 whitespace-nowrap font-display text-[14vw] font-extrabold uppercase leading-[0.9] tracking-tighter gold-text">
           {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="flex items-center gap-16">
-              HK Wedding <span className="italic font-light text-ivory/20">Films.</span>
+              HK Wedding <span className="font-light text-ivory/20">Films.</span>
               <svg width="28" height="28" viewBox="0 0 24 24" className="text-gold/70" aria-hidden>
                 <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" fill="currentColor" />
               </svg>
