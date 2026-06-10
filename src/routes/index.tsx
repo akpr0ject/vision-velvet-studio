@@ -398,60 +398,84 @@ function Services() {
 
 
 function Showcase() {
-  // Bento grid of work — cinematic frames
+  const frames = [
+    { src: s1, alt: "Mandap at night", cls: "sm:col-span-4 sm:row-span-2 aspect-[16/10] sm:aspect-auto sm:min-h-[560px]", tag: "Reel 01 · Mandap", loc: "Udaipur" },
+    { src: s2, alt: "Bride portrait", cls: "sm:col-span-2 aspect-[3/4]", tag: "Reel 02 · Portrait", loc: "Jamnagar" },
+    { src: s3, alt: "Groom on horseback", cls: "sm:col-span-2 aspect-[3/4]", tag: "Reel 03 · Baraat", loc: "Rajkot" },
+    { src: hero, alt: "Bride detail", cls: "sm:col-span-3 aspect-[4/3]", tag: "Reel 04 · Details", loc: "Ahmedabad" },
+    { src: s4, alt: "Aerial venue", cls: "sm:col-span-3 aspect-[4/3]", tag: "Reel 05 · Aerial", loc: "Pan India" },
+  ];
   return (
-    <section id="showcase" className="relative py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+    <section id="showcase" className="relative overflow-hidden py-28 lg:py-40">
+      {/* Backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -left-6 top-16 select-none whitespace-nowrap text-[14vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.08)", color: "transparent" }}
+      >
+        The Archive
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex flex-wrap items-end justify-between gap-6 border-b border-gold/15 pb-6">
           <div>
-            <span className="text-eyebrow">Selected Work</span>
-            <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-              The <em className="italic gold-text">archive.</em>
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 03 — Selected Work</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
+              The <em className="italic gold-text font-light">archive.</em>
             </h2>
           </div>
           <a
             href="https://www.instagram.com/hk.weddingfilms"
             target="_blank"
             rel="noreferrer"
-            className="text-xs uppercase tracking-[0.3em] text-ivory/70 transition-colors hover:text-gold"
+            className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-ivory/70 transition-colors hover:text-gold"
           >
-            Follow on Instagram →
+            <span className="h-px w-8 bg-gold/40 transition-all group-hover:w-14 group-hover:bg-gold" />
+            Follow on Instagram
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-6 sm:gap-5">
-          <Frame src={s1} alt="Mandap at night" className="sm:col-span-4 sm:row-span-2 aspect-[16/10] sm:aspect-auto sm:min-h-[520px]" />
-          <Frame src={s2} alt="Bride portrait" className="sm:col-span-2 aspect-[3/4]" />
-          <Frame src={s3} alt="Groom on horseback" className="sm:col-span-2 aspect-[3/4]" />
-          <Frame src={hero} alt="Bride detail" className="sm:col-span-3 aspect-[4/3]" />
-          <Frame src={s4} alt="Aerial venue" className="sm:col-span-3 aspect-[4/3]" />
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-6 sm:gap-5">
+          {frames.map((f, i) => (
+            <Frame key={i} num={i + 1} {...f} className={f.cls} />
+          ))}
         </div>
 
-        {/* Instagram embed */}
-        <div className="mt-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="text-eyebrow">Live from the Studio</span>
-            <h3 className="font-display mt-5 text-3xl text-ivory sm:text-4xl">
-              @hk.weddingfilms
-            </h3>
-            <p className="mt-4 text-sm font-light text-ivory/70">
-              Our latest reels, behind-the-scenes, and freshly graded frames.
-            </p>
+        {/* Instagram strip */}
+        <div className="mt-24 border-t border-gold/15 pt-16">
+          <div className="grid items-end gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-gold/60" />
+                <span className="text-eyebrow text-gold">Live from the Studio</span>
+              </div>
+              <h3 className="font-display mt-5 text-3xl text-ivory sm:text-5xl">
+                <span className="italic font-light">@</span>hk.weddingfilms
+              </h3>
+              <p className="mt-4 max-w-md text-sm font-light text-ivory/70">
+                Our latest reels, behind-the-scenes, and freshly graded frames —
+                straight from the cutting room.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <a
+                href="https://www.instagram.com/hk.weddingfilms"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex w-full items-center justify-between gap-3 border border-gold/60 px-6 py-4 text-xs font-medium uppercase tracking-[0.3em] text-gold transition-all hover:bg-gold hover:text-wine-ink"
+              >
+                View Full Feed
+                <span>→</span>
+              </a>
+            </div>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <InstaCard handle="hk.weddingfilms" />
             <InstaCard handle="hk.weddingfilms" />
             <InstaCard handle="hk.weddingfilms" />
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="https://www.instagram.com/hk.weddingfilms"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 border border-gold/60 px-8 py-4 text-xs font-medium uppercase tracking-[0.3em] text-gold transition-all hover:bg-gold hover:text-emerald-ink"
-            >
-              View Full Instagram Feed →
-            </a>
           </div>
         </div>
       </div>
@@ -459,22 +483,54 @@ function Showcase() {
   );
 }
 
-function Frame({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+function Frame({
+  src,
+  alt,
+  className = "",
+  num,
+  tag,
+  loc,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  num?: number;
+  tag?: string;
+  loc?: string;
+}) {
   return (
     <figure className={`group relative overflow-hidden hover-lift ${className}`}>
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105"
+        className="h-full w-full object-cover grayscale-[10%] transition-all duration-[1500ms] ease-out group-hover:scale-105 group-hover:grayscale-0"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/70 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-90" />
-      <figcaption className="absolute bottom-5 left-5 text-[10px] uppercase tracking-[0.3em] text-ivory/80">
-        {alt}
+      <div className="absolute inset-0 bg-gradient-to-t from-wine-ink via-wine-ink/20 to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
+
+      {/* Corner index */}
+      {num && (
+        <span className="absolute left-4 top-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-ivory/80">
+          <span className="h-px w-5 bg-gold" />
+          {String(num).padStart(2, "0")}
+        </span>
+      )}
+
+      <figcaption className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5">
+        <div>
+          <div className="font-display text-xl italic text-ivory lg:text-2xl">{tag ?? alt}</div>
+          {loc && (
+            <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-gold/80">{loc}</div>
+          )}
+        </div>
+        <span className="hidden h-9 w-9 items-center justify-center border border-gold/50 text-gold transition-all group-hover:bg-gold group-hover:text-wine-ink sm:flex">
+          ▶
+        </span>
       </figcaption>
     </figure>
   );
 }
+
 
 function InstaCard({ handle }: { handle: string }) {
   return (
