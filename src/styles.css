@@ -109,6 +109,12 @@
   letter-spacing: -0.035em;
 }
 
+@utility font-serif {
+  font-family: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  font-feature-settings: "ss01", "ss02", "ss03", "swsh", "calt";
+  letter-spacing: -0.02em;
+}
+
 
 @utility text-eyebrow {
   font-family: var(--font-sans);
