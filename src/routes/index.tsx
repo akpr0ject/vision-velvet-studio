@@ -265,33 +265,16 @@ function Story() {
                 <span className="mt-3 block h-px w-10 bg-gold/40" />
               </div>
               <p className="text-base font-light leading-[1.85] text-ivory/75 lg:text-[17px]">
-                <span className="sm:hidden font-serif text-3xl text-gold">B</span>orn from a love for cinema and the quiet beauty of Indian rituals,
-                HK Wedding Films approaches every wedding as a story waiting to be told.
-                We don't direct — <em className="font-serif italic text-ivory">we observe.</em>
-                We don't pose — <em className="font-serif italic text-ivory">we listen.</em>
-                The result is unhurried, deeply personal imagery that feels less like a wedding video
-                and more like <em className="font-serif italic text-gold">a memory you can return to.</em>
+                <span className="sm:hidden font-serif text-3xl text-gold">B</span>orn from a love for cinema and the quiet beauty of Indian rituals, HK Wedding Films approaches every wedding as a story waiting to be told. We don't direct — we observe.We don't pose — we listen.The result is unhurried, deeply personal imagery that feels less like a wedding video and more like a memory you can return to.
               </p>
             </div>
-
-            {/* Signature */}
-            <div className="mt-12 flex items-center gap-5">
-              <span className="font-serif text-4xl italic font-light text-gold">
-                Harsh K.
-              </span>
-              <span className="h-px w-16 bg-gold/40" />
-              <span className="text-[10px] uppercase tracking-[0.35em] text-ivory/55">
-                Founder<br />Director of Photography
-              </span>
-            </div>
-
 
             {/* Stats — editorial */}
             <div className="relative mt-16 grid grid-cols-3">
               {[
-                ["120+", "Weddings", "01"],
-                ["8 Yrs", "Crafting", "02"],
-                ["Pan", "India", "03"],
+                ["120+", "WEDDINGS", "01"],
+                ["8 Yrs", "CRAFTING", "02"],
+                ["Pan", "INDIA", "03"],
               ].map(([n, l, i], idx) => (
                 <div
                   key={l}
