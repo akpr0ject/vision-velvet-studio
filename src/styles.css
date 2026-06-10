@@ -40,8 +40,9 @@
   --color-emerald-ink: var(--wine-ink);
   --color-emerald-deep: var(--wine-deep);
 
-  --font-sans: "Urbanist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Cormorant Garamond", "Urbanist", serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
 }
 
 :root {
