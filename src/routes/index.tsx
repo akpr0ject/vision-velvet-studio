@@ -251,7 +251,7 @@ function Story() {
           <div className="lg:col-span-7 lg:pl-8">
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold/90">A Note From The Studio</span>
+              <span className="text-eyebrow text-gold/90">{"\n"}</span>
             </div>
 
             {/* Editorial serif headline */}
