@@ -332,28 +332,62 @@ function Story() {
 
 function Services() {
   const items = [
-    { t: "Cinematic Films", d: "Long-form wedding films composed like cinema — rhythm, music, restraint." },
-    { t: "Editorial Photography", d: "Quiet, candid frames that capture emotion before it ends." },
-    { t: "Pre-Wedding Stories", d: "Concept-driven shoots that introduce you as a couple, not just a portrait." },
-    { t: "Aerial & Drone", d: "Sweeping perspectives of your venue, mandap, and the day itself." },
-    { t: "Highlight Teasers", d: "Two to three minute reels — share-ready, beautifully cut." },
-    { t: "Heirloom Albums", d: "Hand-finished printed albums made to outlast every device." },
+    { t: "Cinematic Films", d: "Long-form wedding films composed like cinema — rhythm, music, restraint.", icon: "🎞" },
+    { t: "Editorial Photography", d: "Quiet, candid frames that capture emotion before it ends.", icon: "📷" },
+    { t: "Pre-Wedding Stories", d: "Concept-driven shoots that introduce you as a couple, not just a portrait.", icon: "✶" },
+    { t: "Aerial & Drone", d: "Sweeping perspectives of your venue, mandap, and the day itself.", icon: "◐" },
+    { t: "Highlight Teasers", d: "Two to three minute reels — share-ready, beautifully cut.", icon: "▶" },
+    { t: "Heirloom Albums", d: "Hand-finished printed albums made to outlast every device.", icon: "❖" },
   ];
   return (
-    <section className="relative border-y border-border bg-emerald-deep/40 py-28 lg:py-40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-eyebrow">What We Do</span>
-          <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-            Every craft, <em className="italic gold-text">under one roof.</em>
-          </h2>
+    <section className="relative overflow-hidden border-y border-gold/15 bg-wine-deep/40 py-28 lg:py-40">
+      {/* Backdrop chapter mark */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -right-10 top-10 select-none text-[14rem] font-extrabold leading-none tracking-tighter text-gold/[0.05] lg:text-[20rem]"
+      >
+        02
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-6">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold/60" />
+              <span className="text-eyebrow text-gold">Chapter 02 — What We Do</span>
+            </div>
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
+              Every craft, <br />
+              <em className="italic gold-text font-light">under one roof.</em>
+            </h2>
+          </div>
+          <div className="lg:col-span-5 lg:col-start-8">
+            <p className="text-base font-light leading-relaxed text-ivory/70">
+              A small, devoted team of cinematographers, photographers and editors —
+              moving as one unit, so every ritual is held with the same quiet attention.
+            </p>
+          </div>
         </div>
-        <div className="mt-20 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* Editorial split list */}
+        <div className="mt-20 divide-y divide-gold/15 border-y border-gold/15">
           {items.map((it, i) => (
-            <div key={it.t} className="group bg-emerald-ink p-10 transition-colors hover:bg-emerald-deep/60 lg:p-12">
-              <div className="font-display text-xs italic text-gold">0{i + 1}</div>
-              <h3 className="font-display mt-6 text-2xl text-ivory lg:text-3xl">{it.t}</h3>
-              <p className="mt-4 text-sm font-light leading-relaxed text-ivory/70">{it.d}</p>
+            <div
+              key={it.t}
+              className="group grid cursor-default grid-cols-12 items-center gap-6 py-8 transition-colors hover:bg-wine-ink/40 lg:py-10"
+            >
+              <div className="col-span-2 font-display text-sm italic text-gold/70 lg:col-span-1 lg:text-base">
+                / 0{i + 1}
+              </div>
+              <h3 className="font-display col-span-10 text-2xl text-ivory transition-transform duration-500 group-hover:translate-x-2 lg:col-span-5 lg:text-4xl">
+                {it.t}
+              </h3>
+              <p className="col-span-12 text-sm font-light leading-relaxed text-ivory/65 lg:col-span-5 lg:text-[15px]">
+                {it.d}
+              </p>
+              <div className="col-span-12 hidden text-right text-2xl text-gold/40 transition-colors group-hover:text-gold lg:col-span-1 lg:block">
+                →
+              </div>
             </div>
           ))}
         </div>
@@ -361,6 +395,7 @@ function Services() {
     </section>
   );
 }
+
 
 function Showcase() {
   // Bento grid of work — cinematic frames
