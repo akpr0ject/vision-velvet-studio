@@ -946,21 +946,69 @@ function Field({
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 text-center md:flex-row md:text-left lg:px-10">
-        <div className="flex items-center gap-4">
-          <img src={logo} alt="HK Production" className="h-10 w-auto" />
-          <div className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">
-            HK Wedding Films · Gujarat
+    <footer className="relative overflow-hidden border-t border-gold/20 bg-wine-ink">
+      {/* Oversized brand mark */}
+      <div className="mx-auto max-w-7xl px-6 pt-20 lg:px-10">
+        <div
+          aria-hidden
+          className="font-display select-none text-[20vw] font-extrabold uppercase leading-[0.85] tracking-tighter gold-text"
+        >
+          HK Wedding<br />
+          <span className="italic font-light text-ivory/15">Films.</span>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-16 max-w-7xl border-t border-gold/15 px-6 py-10 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <div className="flex items-center gap-4">
+              <img src={logo} alt="HK Production" className="h-12 w-auto" />
+              <div>
+                <div className="font-display text-lg text-ivory">HK Wedding Films</div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-gold/70">A Film Studio · Gujarat</div>
+              </div>
+            </div>
+            <p className="mt-5 max-w-sm text-sm font-light text-ivory/60">
+              Cinematic wedding films & editorial photography for couples who want the day remembered the way it actually felt.
+            </p>
+          </div>
+
+          <div className="lg:col-span-3">
+            <div className="text-eyebrow text-gold/70">Explore</div>
+            <ul className="mt-4 space-y-3 text-sm font-light text-ivory/70">
+              {[["Work", "#showcase"], ["Story", "#story"], ["Packages", "#packages"], ["Contact", "#contact"]].map(([l, h]) => (
+                <li key={l}><a href={h} className="hover:text-gold">{l}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-4">
+            <div className="text-eyebrow text-gold/70">Studio</div>
+            <p className="mt-4 text-sm font-light leading-relaxed text-ivory/70">
+              603 Nageswar Prabhu Palace, Ghanteshwar,<br />
+              Jamnagar — Rajkot, Gujarat 360006
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 text-[11px] uppercase tracking-[0.25em]">
+              <a href="https://www.instagram.com/hk.weddingfilms" target="_blank" rel="noreferrer" className="text-gold hover:underline">Instagram</a>
+              <span className="text-ivory/20">·</span>
+              <a href="mailto:hello@hkweddingfilms.com" className="text-gold hover:underline">Email</a>
+            </div>
           </div>
         </div>
-        <div className="text-[10px] uppercase tracking-[0.3em] text-ivory/40">
-          © {new Date().getFullYear()} HK Production · Crafted with care
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gold/15 pt-6 text-[10px] uppercase tracking-[0.3em] text-ivory/40 md:flex-row">
+          <div>© {new Date().getFullYear()} HK Production · Crafted with care in Gujarat</div>
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-gold/40" />
+            We film love, not weddings.
+            <span className="h-px w-8 bg-gold/40" />
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+
 
 function Home() {
   return (
