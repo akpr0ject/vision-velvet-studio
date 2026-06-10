@@ -178,40 +178,145 @@ function Marquee() {
 
 function Story() {
   return (
-    <section id="story" className="relative py-28 lg:py-40">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:gap-24 lg:px-10">
-        <div className="relative">
-          <div className="aspect-[3/4] overflow-hidden">
-            <img src={story} alt="Bride and groom holding hands" className="h-full w-full object-cover" loading="lazy" width={1200} height={1600} />
-          </div>
-          <div className="pointer-events-none absolute -bottom-6 -right-6 hidden h-32 w-32 border border-gold/40 md:block" />
-          <div className="pointer-events-none absolute -top-6 -left-6 hidden h-20 w-20 border border-gold/40 md:block" />
+    <section id="story" className="relative overflow-hidden py-28 lg:py-40">
+      {/* Oversized backdrop word */}
+      <div
+        aria-hidden
+        className="font-display pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[22vw] font-extrabold uppercase leading-none tracking-tighter"
+        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.10)", color: "transparent" }}
+      >
+        Chapter 01
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Top editorial bar */}
+        <div className="flex items-end justify-between border-b border-gold/20 pb-6">
+          <span className="text-eyebrow text-gold">— The Studio · Est. 2017</span>
+          <span className="hidden text-[10px] uppercase tracking-[0.4em] text-ivory/40 md:block">Ahmedabad · Gujarat</span>
         </div>
-        <div>
-          <span className="text-eyebrow">The Studio</span>
-          <h2 className="font-display mt-6 text-4xl leading-tight text-ivory sm:text-5xl lg:text-6xl">
-            A wedding is a single day. <br />
-            <em className="italic gold-text">A film is forever.</em>
-          </h2>
-          <span className="gold-divider mt-8" />
-          <p className="mt-8 text-base font-light leading-relaxed text-ivory/75 lg:text-lg">
-            Born from a love for cinema and the quiet beauty of Indian rituals,
-            HK Wedding Films approaches every wedding as a story waiting to be told.
-            We don't direct — we observe. We don't pose — we listen. The result is
-            unhurried, deeply personal imagery that feels less like a wedding video
-            and more like a memory you can return to.
-          </p>
-          <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
-            {[
-              ["120+", "Weddings"],
-              ["8 Yrs", "Crafting"],
-              ["Pan", "India"],
-            ].map(([n, l]) => (
-              <div key={l}>
-                <div className="font-display text-3xl text-gold lg:text-4xl">{n}</div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-ivory/60">{l}</div>
+
+        <div className="mt-16 grid gap-16 lg:grid-cols-12 lg:gap-12">
+          {/* Left: layered images + vertical label */}
+          <div className="relative lg:col-span-5">
+            {/* Vertical label */}
+            <div className="absolute -left-2 top-0 hidden h-full lg:block">
+              <span
+                className="text-eyebrow block whitespace-nowrap text-ivory/40"
+                style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+              >
+                Vol. 08 — A Quiet Cinema
+              </span>
+            </div>
+
+            <div className="relative lg:pl-12">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <img
+                  src={story}
+                  alt="Bride and groom holding hands"
+                  className="h-full w-full object-cover grayscale-[15%] transition duration-700 hover:grayscale-0"
+                  loading="lazy"
+                  width={1200}
+                  height={1600}
+                />
+                {/* Caption tag */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between bg-wine-ink/70 px-3 py-2 backdrop-blur">
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/80">Fig. 01 / Mehndi</span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold">35mm · f/1.4</span>
+                </div>
               </div>
-            ))}
+
+              {/* Floating polaroid */}
+              <div className="absolute -bottom-10 -right-4 hidden w-40 rotate-[6deg] border-[6px] border-ivory/95 shadow-2xl shadow-wine-ink/60 md:block lg:w-48">
+                <div className="aspect-[3/4] overflow-hidden bg-wine-deep">
+                  <img src={story} alt="" aria-hidden className="h-full w-full scale-150 object-cover object-left" />
+                </div>
+                <div className="bg-ivory/95 px-2 py-1 text-center text-[9px] uppercase tracking-[0.25em] text-wine-ink">
+                  forever &amp; ever
+                </div>
+              </div>
+
+              {/* Corner marks */}
+              <div className="pointer-events-none absolute -left-3 -top-3 h-10 w-10 border-l-2 border-t-2 border-gold lg:left-9" />
+              <div className="pointer-events-none absolute -right-3 -bottom-3 h-10 w-10 border-b-2 border-r-2 border-gold" />
+            </div>
+          </div>
+
+          {/* Right: copy */}
+          <div className="lg:col-span-7 lg:pl-8">
+            <div className="flex items-baseline gap-4">
+              <span className="font-display text-5xl font-extralight text-gold/60">“</span>
+              <span className="text-eyebrow text-ivory/60">A Note From The Studio</span>
+            </div>
+
+            <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
+              A wedding is a <span className="italic font-light text-ivory/85">single day.</span>
+              <br />
+              <span className="relative inline-block">
+                <span className="italic gold-text">A film is forever</span>
+                <svg
+                  className="absolute -bottom-2 left-0 w-full"
+                  height="14"
+                  viewBox="0 0 400 14"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M2 9 C 100 1, 200 14, 398 5"
+                    stroke="oklch(0.76 0.13 78)"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+              <span className="text-gold">.</span>
+            </h2>
+
+            <div className="mt-10 grid gap-8 sm:grid-cols-[auto_1fr]">
+              <div className="hidden sm:block">
+                <div className="font-display text-6xl font-extrabold leading-none text-gold/80">B</div>
+                <span className="mt-3 block h-px w-10 bg-gold/40" />
+              </div>
+              <p className="text-base font-light leading-relaxed text-ivory/75 lg:text-[17px]">
+                <span className="sm:hidden">B</span>orn from a love for cinema and the quiet beauty of Indian rituals,
+                HK Wedding Films approaches every wedding as a story waiting to be told.
+                We don't direct — <em className="italic text-ivory/90">we observe.</em> We don't pose —
+                <em className="italic text-ivory/90"> we listen.</em> The result is unhurried, deeply personal
+                imagery that feels less like a wedding video and more like a memory you can return to.
+              </p>
+            </div>
+
+            {/* Signature */}
+            <div className="mt-10 flex items-center gap-4">
+              <span
+                className="font-display text-3xl italic font-light text-gold"
+                style={{ fontFamily: "'Plus Jakarta Sans', serif" }}
+              >
+                Harsh K.
+              </span>
+              <span className="h-px w-12 bg-gold/40" />
+              <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/50">Founder · Director</span>
+            </div>
+
+            {/* Stats — editorial */}
+            <div className="relative mt-16 grid grid-cols-3">
+              {[
+                ["120+", "Weddings", "01"],
+                ["8 Yrs", "Crafting", "02"],
+                ["Pan", "India", "03"],
+              ].map(([n, l, i], idx) => (
+                <div
+                  key={l}
+                  className={`relative px-4 py-2 ${idx > 0 ? "border-l border-gold/15" : ""}`}
+                >
+                  <span className="absolute right-3 top-0 text-[10px] tracking-[0.2em] text-ivory/30">{i}</span>
+                  <div className="font-display text-3xl font-extrabold text-ivory lg:text-4xl">
+                    {n}
+                  </div>
+                  <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-gold/80">{l}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
