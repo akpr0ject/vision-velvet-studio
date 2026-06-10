@@ -40,8 +40,9 @@
   --color-emerald-ink: var(--wine-ink);
   --color-emerald-deep: var(--wine-deep);
 
-  --font-sans: "Urbanist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Cormorant Garamond", "Urbanist", serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
 }
 
 :root {
@@ -104,9 +105,10 @@
 
 @utility font-display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
 }
+
 
 @utility text-eyebrow {
   font-family: var(--font-sans);
