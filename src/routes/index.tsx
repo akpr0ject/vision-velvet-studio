@@ -160,21 +160,27 @@ function Hero() {
 
 
 function Marquee() {
-  const words = ["Cinematic", "Timeless", "Editorial", "Soulful", "Crafted", "Heirloom"];
+  const words = ["Cinematic", "Timeless", "Editorial", "Soulful", "Crafted", "Heirloom", "Unhurried", "Golden"];
+  const row = [...words, ...words];
   return (
-    <div className="border-y border-border bg-emerald-deep/30 py-6 overflow-hidden">
-      <div className="flex animate-[shimmer_30s_linear_infinite] gap-16 whitespace-nowrap font-display text-2xl italic text-gold/80 sm:text-3xl"
-        style={{ animation: "none" }}>
-        {[...words, ...words, ...words].map((w, i) => (
-          <span key={i} className="flex items-center gap-16">
-            {w}
-            <span className="text-gold/40">✦</span>
+    <div className="relative overflow-hidden border-y border-gold/20 bg-wine-deep/40 py-8">
+      <div className="flex w-max animate-marquee gap-14 whitespace-nowrap pr-14 font-display text-3xl italic text-gold/85 sm:text-4xl lg:text-5xl">
+        {row.map((w, i) => (
+          <span key={i} className="flex items-center gap-14">
+            <span className="font-extralight">{w}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" className="text-gold/60" aria-hidden>
+              <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" fill="currentColor" />
+            </svg>
           </span>
         ))}
       </div>
+      {/* edge fades */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent" />
     </div>
   );
 }
+
 
 function Story() {
   return (
