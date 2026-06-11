@@ -116,7 +116,7 @@ function Hero() {
               LOVE<span className="gold-text">.</span>
             </span>
             <span className="font-display text-[8vw] font-medium tracking-tight text-ivory/85 sm:text-4xl lg:text-5xl">
-              and <em className="italic font-light gold-text">weddings.</em>
+              and <span className="font-light gold-text">weddings.</span>
             </span>
           </h1>
 
