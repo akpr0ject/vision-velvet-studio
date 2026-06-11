@@ -163,7 +163,7 @@ function Marquee() {
   const row = [...words, ...words];
   return (
     <div className="relative overflow-hidden border-y border-gold/20 bg-wine-deep/40 py-8">
-      <div className="flex w-max animate-marquee gap-14 whitespace-nowrap pr-14 font-display text-3xl italic text-gold/85 sm:text-4xl lg:text-5xl">
+      <div className="flex w-max animate-marquee gap-14 whitespace-nowrap pr-14 font-display text-3xl text-gold/85 sm:text-4xl lg:text-5xl">
         {row.map((w, i) => (
           <span key={i} className="flex items-center gap-14">
             <span className="font-extralight">{w}</span>
