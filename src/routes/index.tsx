@@ -109,7 +109,7 @@ function Hero() {
 
           {/* Editorial mixed-weight headline */}
           <h1 className="relative mt-7 flex flex-col items-center gap-1 leading-[0.92] text-ivory">
-            <span className="font-display text-[10vw] font-light italic tracking-tight text-ivory/85 sm:text-5xl lg:text-6xl">
+            <span className="font-display text-[10vw] font-light tracking-tight text-ivory/85 sm:text-5xl lg:text-6xl">
               we film
             </span>
             <span className="font-display text-[18vw] font-extrabold uppercase tracking-[-0.04em] sm:text-8xl lg:text-[8.5rem]">
