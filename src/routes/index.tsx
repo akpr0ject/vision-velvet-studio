@@ -430,9 +430,9 @@ function Showcase() {
             </div>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <InstaCard handle="hk.weddingfilms" />
-            <InstaCard handle="hk.weddingfilms" />
-            <InstaCard handle="hk.weddingfilms" />
+            <InstaCard handle="hk.weddingfilms" image={s1} caption="Mehndi · Golden hour" />
+            <InstaCard handle="hk.weddingfilms" image={s3} caption="Pheras · 35mm" />
+            <InstaCard handle="hk.weddingfilms" image={story} caption="Couple portrait" />
           </div>
         </div>
       </div>
