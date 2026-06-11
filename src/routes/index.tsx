@@ -430,9 +430,9 @@ function Showcase() {
             </div>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <InstaCard handle="hk.weddingfilms" />
-            <InstaCard handle="hk.weddingfilms" />
-            <InstaCard handle="hk.weddingfilms" />
+            <InstaCard handle="hk.weddingfilms" image={s1} caption="Mehndi · Golden hour" />
+            <InstaCard handle="hk.weddingfilms" image={s3} caption="Pheras · 35mm" />
+            <InstaCard handle="hk.weddingfilms" image={story} caption="Couple portrait" />
           </div>
         </div>
       </div>
@@ -489,25 +489,33 @@ function Frame({
 }
 
 
-function InstaCard({ handle }: { handle: string }) {
+function InstaCard({ handle, image, caption }: { handle: string; image: string; caption: string }) {
   return (
     <a
       href={`https://www.instagram.com/${handle}`}
       target="_blank"
       rel="noreferrer"
-      className="group block aspect-square border border-border bg-emerald-deep/40 p-8 transition-all hover:border-gold/60"
+      className="group relative block aspect-square overflow-hidden border border-border bg-emerald-deep/40 transition-all hover:border-gold/60"
     >
-      <div className="flex h-full flex-col justify-between">
-        <div className="text-gold">
+      <img
+        src={image}
+        alt={caption}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover grayscale-[10%] transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-wine-ink/90 via-wine-ink/30 to-wine-ink/20" />
+      <div className="relative flex h-full flex-col justify-between p-8">
+        <div className="flex items-center justify-between text-gold">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-8 w-8">
             <rect x="3" y="3" width="18" height="18" rx="4" />
             <circle cx="12" cy="12" r="4" />
             <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
           </svg>
+          <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/70">Reel</span>
         </div>
         <div>
-          <div className="font-display text-xl italic text-ivory">Latest Reel</div>
-          <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-ivory/60">
+          <div className="font-display text-xl italic text-ivory">{caption}</div>
+          <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-ivory/70">
             @{handle} →
           </div>
         </div>
