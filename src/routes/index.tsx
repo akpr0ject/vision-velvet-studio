@@ -105,7 +105,7 @@ function Hero() {
             forever
           </span>
 
-          <span className="text-eyebrow relative">A HK Wedding Film</span>
+          <span className="text-eyebrow relative">{"\n"}</span>
 
           {/* Editorial mixed-weight headline */}
           <h1 className="relative mt-7 flex flex-col items-center gap-1 leading-[0.92] text-ivory">
@@ -113,7 +113,7 @@ function Hero() {
               we film
             </span>
             <span className="font-display text-[18vw] font-extrabold uppercase tracking-[-0.04em] sm:text-8xl lg:text-[8.5rem]">
-              love<span className="gold-text">.</span>
+              LOVE<span className="gold-text">.</span>
             </span>
             <span className="font-display text-[8vw] font-medium tracking-tight text-ivory/85 sm:text-4xl lg:text-5xl">
               and <em className="italic font-light gold-text">weddings.</em>
@@ -122,13 +122,12 @@ function Hero() {
 
           <div className="relative mt-8 flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-ivory/60">
             <span className="h-px w-10 bg-gold/60" />
-            Cinematic · Editorial · Timeless
+            CINEMATIC · EDITORIAL · TIMELESS
             <span className="h-px w-10 bg-gold/60" />
           </div>
 
           <p className="relative mt-7 max-w-md text-sm font-light leading-relaxed text-ivory/70">
-            For couples who want their day remembered the way it actually felt —
-            quiet, golden, and entirely their own.
+            For couples who want their day remembered the way it actually felt — quiet, golden, and entirely their own.
           </p>
 
           <div className="relative mt-10 flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
@@ -136,14 +135,14 @@ function Hero() {
               href="#showcase"
               className="group inline-flex items-center gap-3 bg-gold px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-wine-ink transition-all hover:bg-gold-soft"
             >
-              View Our Films
+              VIEW OUR FILMS
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#contact"
               className="text-[11px] font-medium uppercase tracking-[0.3em] text-ivory/80 underline decoration-gold/50 underline-offset-8 transition-colors hover:text-gold"
             >
-              Book a Consultation
+              BOOK A CONSULTATION
             </a>
           </div>
         </div>
@@ -151,7 +150,7 @@ function Hero() {
 
       <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center">
         <div className="mx-auto h-10 w-px bg-gradient-to-b from-transparent to-gold/60" />
-        <span className="mt-2 block text-[10px] tracking-[0.4em] text-ivory/50 uppercase">Scroll</span>
+        <span className="mt-2 block text-[10px] tracking-[0.4em] text-ivory/50 uppercase">{"\n"}</span>
       </div>
 
     </section>
