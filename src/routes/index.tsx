@@ -11,8 +11,8 @@ import s4 from "@/assets/showcase-4.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HK Wedding Films — Luxury Wedding Cinematography in Gujarat" },
-      { name: "description", content: "Award-style cinematic wedding films & photography by HK Wedding Films. Based in Rajkot & Jamnagar, capturing weddings across India." },
+      { title: "HK Wedding FILMS. — Luxury Wedding Cinematography in Gujarat" },
+      { name: "description", content: "Award-style cinematic wedding films & photography by HK Wedding FILMS. Based in Rajkot & Jamnagar, capturing weddings across India." },
     ],
   }),
   component: Home,
@@ -41,7 +41,7 @@ function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         <a href="#top" className="flex items-center gap-3">
           <img src={logo} alt="HK Production" className="h-10 w-auto md:h-12" />
-          <span className="hidden text-eyebrow sm:inline">HK Wedding Films</span>
+          <span className="hidden text-eyebrow sm:inline">HK Wedding FILMS.</span>
         </a>
         <nav className="hidden items-center gap-10 md:flex">
           {links.map(([l, h]) => (
@@ -105,7 +105,7 @@ function Hero() {
             forever
           </span>
 
-          <span className="text-eyebrow relative">{"\n"}</span>
+          <span className="text-eyebrow relative whitespace-pre-wrap">HK&nbsp; &nbsp;WEDDING{"\n"}FILMS.</span>
 
           {/* Editorial mixed-weight headline */}
           <h1 className="relative mt-7 flex flex-col items-center gap-1 leading-[0.92] text-ivory">
@@ -150,7 +150,7 @@ function Hero() {
 
       <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center">
         <div className="mx-auto h-10 w-px bg-gradient-to-b from-transparent to-gold/60" />
-        <span className="mt-2 block text-[10px] tracking-[0.4em] text-ivory/50 uppercase">{"\n"}</span>
+        <span className="mt-2 block text-[10px] tracking-[0.4em] text-ivory/50 uppercase whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
       </div>
 
     </section>
@@ -188,7 +188,7 @@ function Story() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         {/* Top editorial bar */}
         <div className="flex items-end justify-between border-b border-gold/20 pb-6">
-          <span className="text-eyebrow text-gold">{"\n"}</span>
+          <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
           <span className="hidden text-[10px] uppercase tracking-[0.4em] text-ivory/40 md:block">Ahmedabad · Gujarat</span>
         </div>
 
@@ -242,7 +242,7 @@ function Story() {
           <div className="lg:col-span-7 lg:pl-8">
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold/90">{"\n"}</span>
+              <span className="text-eyebrow text-gold/90 whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
             </div>
 
             {/* Editorial serif headline */}
@@ -310,7 +310,7 @@ function Services() {
           <div className="lg:col-span-6">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">{"\n"}</span>
+              <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               Every craft, <br />
@@ -377,7 +377,7 @@ function Showcase() {
           <div>
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">{"\n"}</span>
+              <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               The <em className="italic gold-text font-light">archive.</em>
@@ -406,7 +406,7 @@ function Showcase() {
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-gold/60" />
-                <span className="text-eyebrow text-gold">{"\n"}</span>
+                <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
               </div>
               <h3 className="font-display mt-5 text-3xl text-ivory sm:text-5xl">
                 <span className="italic font-light">@</span>hk.weddingfilms
@@ -585,7 +585,7 @@ function Packages() {
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">{"\n"}</span>
+              <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5rem]">
               Three ways to <em className="italic gold-text font-light">remember.</em>
@@ -707,7 +707,7 @@ function Testimonials() {
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
           <div className="flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
-            <span className="text-eyebrow text-gold">{"\n"}</span>
+            <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
             <span className="h-px w-10 bg-gold/60" />
           </div>
           <h2 className="font-display mt-6 text-3xl leading-[1.1] text-ivory sm:text-4xl lg:text-5xl">
@@ -774,7 +774,7 @@ function Contact() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" />
-              <span className="text-eyebrow text-gold">{"\n"}</span>
+              <span className="text-eyebrow text-gold whitespace-pre-wrap">HK&nbsp; &nbsp; WEDDING{"\n"}FILMS.</span>
             </div>
             <h2 className="font-display mt-6 text-4xl leading-[1.05] text-ivory sm:text-5xl lg:text-[5.5rem]">
               Tell us your <br />
