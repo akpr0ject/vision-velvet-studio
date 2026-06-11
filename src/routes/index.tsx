@@ -185,14 +185,6 @@ function Marquee() {
 function Story() {
   return (
     <section id="story" className="relative overflow-hidden py-28 lg:py-40">
-      {/* Oversized backdrop word */}
-      <div
-        aria-hidden
-        className="font-display pointer-events-none absolute -top-6 left-1/2 -translate-x-1/2 select-none whitespace-nowrap text-[22vw] font-extrabold uppercase leading-none tracking-tighter"
-        style={{ WebkitTextStroke: "1px oklch(0.76 0.13 78 / 0.10)", color: "transparent" }}
-      >
-        Chapter 01
-      </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         {/* Top editorial bar */}
